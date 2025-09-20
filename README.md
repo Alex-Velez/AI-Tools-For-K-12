@@ -1,2 +1,2 @@
 # AI-Tools-For-K-12
-AI Tool for K-12 Reasearch Study
+AI Tool for K-12 Research Study
