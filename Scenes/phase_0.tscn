@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfyys824p5lua"]
+
+[ext_resource type="Script" uid="uid://belotrk06v48v" path="res://Scripts/phase_0.gd" id="1_aobwp"]
+
+[node name="Phase0" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_aobwp")
+
+[node name="AcceptDialog" type="AcceptDialog" parent="."]
+oversampling_override = 1.0
+title = "Rowdy Robo!"
+initial_position = 4
+size = Vector2i(272, 132)
+visible = true
+dialog_text = "Hello! I'll be here to guide you! Begin by dragging a code block into the main loop!"
+dialog_autowrap = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 285.0
+offset_top = 345.0
+offset_right = 325.0
+offset_bottom = 385.0
+
+[connection signal="mouse_entered" from="ColorRect" to="." method="_on_color_rect_mouse_entered"]
+[connection signal="mouse_exited" from="ColorRect" to="." method="_on_color_rect_mouse_exited"]
