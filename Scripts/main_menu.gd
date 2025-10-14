@@ -2,12 +2,11 @@ extends Control
 
 @onready var first_name_box = $VBoxContainer/FirstNameLineEdit
 @onready var last_name_box = $VBoxContainer/LastNameLineEdit
+@onready var grade_dropdown = $VBoxContainer/GradeOptionButton
 
 const CSV_PATH = "user://student_data.csv"
 
 func _on_start_button_pressed() -> void:
-	#get_tree().change_scene_to_file("PATH/TO/SCENE")
-	
 	var first_name = first_name_box.text.strip_edges()
 	var last_name = last_name_box.text.strip_edges()
 	
@@ -15,13 +14,15 @@ func _on_start_button_pressed() -> void:
 		print("Please enter both names")
 		return
 	
+	if grade_dropdown.selected < 1:
+		print("Please select a grade")
+		return
+	
 	if len(last_name) > 1:
 		print("Please only enter last initial")
 		return
-	
-	var new_student = Student.new()
-	new_student.set_first_name(first_name)
-	new_student.set_last_name(last_name)
+
+	var new_student = Student.new(first_name, last_name, grade_dropdown.selected + 5)
 	
 	if not FileAccess.file_exists(CSV_PATH):
 		var new_file = FileAccess.open(CSV_PATH, FileAccess.WRITE)
@@ -42,4 +43,6 @@ func _on_start_button_pressed() -> void:
 	file.close()
 	
 	print("Saved student")
+	
+	get_tree().change_scene_to_file("res://Scenes/welcome_screen.tscn")
 	pass
