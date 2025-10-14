@@ -1,6 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://d3pco7ohrte2y"]
+[gd_scene load_steps=5 format=3 uid="uid://d3pco7ohrte2y"]
 
 [ext_resource type="Script" uid="uid://c2qk7lw7aa7wj" path="res://Scripts/main_menu.gd" id="1_28flt"]
+[ext_resource type="Texture2D" uid="uid://urre78sulpjt" path="res://Sprites/robotsprite.png" id="2_48xlc"]
+
+[sub_resource type="FontFile" id="FontFile_1ehe0"]
+cache/0/56/0/ascent = 0.0
+cache/0/56/0/descent = 0.0
+cache/0/56/0/underline_position = 0.0
+cache/0/56/0/underline_thickness = 0.0
+cache/0/56/0/scale = 1.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_28flt"]
 font_size = 56
@@ -14,6 +27,18 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_28flt")
 
+[node name="Background Color" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0018518518
+anchor_top = 0.0016447369
+anchor_right = 1.0018518
+anchor_bottom = 1.0016447
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.44615185, 0.40771052, 1, 1)
+metadata/_edit_use_anchors_ = true
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -21,15 +46,19 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -180.99998
+offset_left = -181.0
 offset_top = -50.5
-offset_right = 180.99998
+offset_right = 181.0
 offset_bottom = 50.5
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.38039216, 0.25882354, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontFile_1ehe0")
 text = "Welcome to RowdyRoboVac!"
 label_settings = SubResource("LabelSettings_28flt")
 
@@ -60,5 +89,10 @@ popup/item_3/id = 3
 [node name="StartButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Start"
+
+[node name="Robotsprite" type="Sprite2D" parent="."]
+position = Vector2(536, 507.00006)
+scale = Vector2(0.78333324, 0.7455554)
+texture = ExtResource("2_48xlc")
 
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
