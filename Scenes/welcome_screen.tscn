@@ -1,4 +1,10 @@
-[gd_scene format=3 uid="uid://mpok1m3717mp"]
+[gd_scene load_steps=3 format=3 uid="uid://clbjj6xkvlbpb"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_pdupl"]
+specular_color = Color(0.67082214, 0.30818143, 0.7384282, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o5oub"]
+texture = SubResource("CanvasTexture_pdupl")
 
 [node name="WelcomeScreen" type="Control"]
 layout_mode = 3
@@ -8,36 +14,90 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0.10980392, 0.7882353, 0.64705884, 1)
 
-[node name="Label" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-text = "Welcome to RowdyRoboVac!"
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+offset_right = 1271.0
+offset_bottom = 125.0
+theme_override_colors/font_color = Color(0.02745098, 0.02745098, 0.41568628, 1)
+theme_override_font_sizes/font_size = 44
+text = "Welcome to Rowdy Robo Vac! 
+"
 
-[node name="Label2" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-text = "1. Design the Room"
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_top = 75.0
+offset_right = 1081.0
+offset_bottom = 146.0
+theme_override_colors/font_color = Color(0.08949559, 0.09028802, 0.7821672, 1)
+theme_override_font_sizes/font_size = 24
+text = "In this game, you’ll explore how a robot vacuum uses different algorithms to make decisions, 
+helping you think like a computer scientist and see how AI really works."
+horizontal_alignment = 1
 
-[node name="Label3" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-text = "2. Drive Manually"
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 184.0
+offset_right = 1079.0
+offset_bottom = 305.0
+theme_override_font_sizes/font_size = 20
+text = "How to play : 
+In this game, you’ll guide a robot vacuum through three phases to discover how algorithms shape its behavior.
 
-[node name="Label4" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-text = "3. Build your algorithm"
+"
+horizontal_alignment = 1
 
-[node name="Label5" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-text = "4. Test & Improve"
+[node name="Label4" type="Label" parent="."]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 270.0
+offset_right = 1079.0
+offset_bottom = 449.0
+theme_override_font_sizes/font_size = 20
+text = "Phase 0: Learn the basics of programming blocks to move your robot straight ahead.
+
+Phase 1: Build a spiral algorithm to help the robot clean efficiently.
+
+Phase 2: Explore how a random algorithm changes the robot’s movement.
+
+"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="."]
+layout_mode = 0
+offset_top = 452.0
+offset_right = 1080.0
+offset_bottom = 511.0
+theme_override_font_sizes/font_size = 20
+text = "After mastering these phases, enter the Free Dev Zone to design and test your own cleaning algorithms!
+"
+horizontal_alignment = 1
+
+[node name="MenuButton" type="MenuButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.48600003
+anchor_top = 0.88400006
+anchor_right = 0.48600003
+anchor_bottom = 0.88400006
+offset_left = -102.880005
+offset_top = -40.472046
+offset_right = 102.619995
+offset_bottom = 40.527954
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/icon_normal_color = Color(0.67082214, 0.30818143, 0.7384282, 1)
+theme_override_colors/icon_focus_color = Color(0.48235294, 0.18431373, 0.5372549, 1)
+theme_override_colors/icon_hover_color = Color(1, 0.039215688, 1, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_o5oub")
+text = "Got it, lets go! "
