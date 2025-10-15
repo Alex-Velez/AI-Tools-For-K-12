@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://bfyys824p5lua"]
+[gd_scene load_steps=4 format=3 uid="uid://bfyys824p5lua"]
 
 [ext_resource type="Script" uid="uid://belotrk06v48v" path="res://Scripts/phase_0.gd" id="1_aobwp"]
+[ext_resource type="PackedScene" uid="uid://cc8lnwawr8fkr" path="res://Scenes/block_platform.tscn" id="2_w7xn5"]
+[ext_resource type="PackedScene" uid="uid://0mw828013ia0" path="res://Scenes/code_block.tscn" id="3_6cuvu"]
 
 [node name="Phase0" type="Control"]
 layout_mode = 3
@@ -9,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_aobwp")
 
 [node name="AcceptDialog" type="AcceptDialog" parent="."]
@@ -26,6 +29,15 @@ offset_left = 285.0
 offset_top = 345.0
 offset_right = 325.0
 offset_bottom = 385.0
+
+[node name="BlockPlatform" parent="." instance=ExtResource("2_w7xn5")]
+position = Vector2(143, 455)
+
+[node name="BlockPlatform2" parent="." instance=ExtResource("2_w7xn5")]
+position = Vector2(854, 186)
+
+[node name="CodeBlock" parent="." instance=ExtResource("3_6cuvu")]
+position = Vector2(643, 453)
 
 [connection signal="mouse_entered" from="ColorRect" to="." method="_on_color_rect_mouse_entered"]
 [connection signal="mouse_exited" from="ColorRect" to="." method="_on_color_rect_mouse_exited"]
