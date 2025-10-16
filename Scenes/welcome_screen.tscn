@@ -1,4 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://clbjj6xkvlbpb"]
+[gd_scene load_steps=11 format=3 uid="uid://clbjj6xkvlbpb"]
+
+[ext_resource type="Script" uid="uid://dxv13dhdafg46" path="res://Scenes/welcome_screen.gd" id="1_o5oub"]
+[ext_resource type="FontFile" uid="uid://bn3wgm4rrubhy" path="res://fonts/RougeVintage.ttf" id="2_ir4ir"]
+[ext_resource type="FontFile" uid="uid://bi8egcam55ec8" path="res://fonts/Camcode Free.ttf" id="3_asssd"]
+[ext_resource type="Texture2D" uid="uid://db7p5lde12lqi" path="res://icon.svg" id="5_wvf1o"]
+[ext_resource type="Texture2D" uid="uid://xobsfcmlbixq" path="res://Sprites/arrow-right-black-outline-md.png" id="6_1vke3"]
+[ext_resource type="FontFile" uid="uid://duet0ln2qsyd3" path="res://fonts/American Captain.ttf" id="7_1wttx"]
+
+[sub_resource type="Gradient" id="Gradient_g3ocs"]
+colors = PackedColorArray(0.49322522, 0.64461756, 0.8727043, 1, 0.17404163, 0.30300272, 0.49733144, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jdskd"]
+gradient = SubResource("Gradient_g3ocs")
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_pdupl"]
 specular_color = Color(0.67082214, 0.30818143, 0.7384282, 1)
@@ -13,74 +26,28 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_o5oub")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 2.0
+offset_right = 1078.0
+offset_bottom = 605.0
+texture = SubResource("GradientTexture2D_jdskd")
+
+[node name="ColorRect3" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 411.0
+offset_top = 557.0
+offset_right = -445.0
+offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.10980392, 0.7882353, 0.64705884, 1)
-
-[node name="Label" type="Label" parent="."]
-layout_mode = 1
-offset_right = 1271.0
-offset_bottom = 125.0
-theme_override_colors/font_color = Color(0.02745098, 0.02745098, 0.41568628, 1)
-theme_override_font_sizes/font_size = 44
-text = "Welcome to Rowdy Robo Vac! 
-"
-
-[node name="Label2" type="Label" parent="."]
-layout_mode = 0
-offset_top = 75.0
-offset_right = 1081.0
-offset_bottom = 146.0
-theme_override_colors/font_color = Color(0.08949559, 0.09028802, 0.7821672, 1)
-theme_override_font_sizes/font_size = 24
-text = "In this game, you’ll explore how a robot vacuum uses different algorithms to make decisions, 
-helping you think like a computer scientist and see how AI really works."
-horizontal_alignment = 1
-
-[node name="Label3" type="Label" parent="."]
-layout_mode = 0
-offset_left = -1.0
-offset_top = 184.0
-offset_right = 1079.0
-offset_bottom = 305.0
-theme_override_font_sizes/font_size = 20
-text = "How to play : 
-In this game, you’ll guide a robot vacuum through three phases to discover how algorithms shape its behavior.
-
-"
-horizontal_alignment = 1
-
-[node name="Label4" type="Label" parent="."]
-layout_mode = 0
-offset_left = -1.0
-offset_top = 270.0
-offset_right = 1079.0
-offset_bottom = 449.0
-theme_override_font_sizes/font_size = 20
-text = "Phase 0: Learn the basics of programming blocks to move your robot straight ahead.
-
-Phase 1: Build a spiral algorithm to help the robot clean efficiently.
-
-Phase 2: Explore how a random algorithm changes the robot’s movement.
-
-"
-horizontal_alignment = 1
-
-[node name="Label5" type="Label" parent="."]
-layout_mode = 0
-offset_top = 452.0
-offset_right = 1080.0
-offset_bottom = 511.0
-theme_override_font_sizes/font_size = 20
-text = "After mastering these phases, enter the Free Dev Zone to design and test your own cleaning algorithms!
-"
-horizontal_alignment = 1
+color = Color(0.9980001, 0.7254537, 0.59120685, 1)
 
 [node name="MenuButton" type="MenuButton" parent="."]
 layout_mode = 1
@@ -89,15 +56,173 @@ anchor_left = 0.48600003
 anchor_top = 0.88400006
 anchor_right = 0.48600003
 anchor_bottom = 0.88400006
-offset_left = -102.880005
-offset_top = -40.472046
-offset_right = 102.619995
-offset_bottom = 40.527954
+offset_left = -112.880005
+offset_top = -0.4720459
+offset_right = 114.119995
+offset_bottom = 80.527954
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_colors/font_color = Color(0.17404163, 0.30300272, 0.49733144, 1)
 theme_override_colors/icon_normal_color = Color(0.67082214, 0.30818143, 0.7384282, 1)
 theme_override_colors/icon_focus_color = Color(0.48235294, 0.18431373, 0.5372549, 1)
 theme_override_colors/icon_hover_color = Color(1, 0.039215688, 1, 1)
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxTexture_o5oub")
-text = "Got it, lets go! "
+text = "Got it, let's go! "
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 76.0
+offset_right = -1.0
+offset_bottom = -450.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.7523888, 0.33161548, 0.023874296, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = 465.0
+offset_right = -4.0
+offset_bottom = -61.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.45849437, 0.19037914, 0.006702159, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+offset_left = 2.0
+offset_top = 11.0
+offset_right = 489.0
+offset_bottom = 94.0
+theme_override_colors/font_color = Color(0.02745098, 0.02745098, 0.41568628, 1)
+theme_override_fonts/font = ExtResource("2_ir4ir")
+theme_override_font_sizes/font_size = 70
+text = "Welcome to RowdyRobo!
+"
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 287.0
+offset_top = 75.0
+offset_right = 1063.0
+offset_bottom = 210.0
+theme_override_colors/font_color = Color(0.7421628, 0.9020915, 0.9830583, 1)
+theme_override_fonts/font = ExtResource("3_asssd")
+theme_override_font_sizes/font_size = 26
+text = "In this game, you’ll guide a robot vacuum through three phases to discover how algorithms shape its behavior.
+
+"
+autowrap_mode = 3
+
+[node name="Label5" type="Label" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 469.0
+offset_right = 1049.0
+offset_bottom = 546.0
+theme_override_fonts/font = ExtResource("3_asssd")
+theme_override_font_sizes/font_size = 27
+text = "After mastering these phases, enter the Free Dev Zone to design and test your own cleaning algorithms!"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Label6" type="Label" parent="."]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 82.0
+offset_right = 296.0
+offset_bottom = 137.0
+theme_override_colors/font_color = Color(0.7421628, 0.9020915, 0.9830583, 1)
+theme_override_fonts/font = ExtResource("3_asssd")
+theme_override_font_sizes/font_size = 40
+text = "How to play : "
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(1015.00006, 317)
+scale = Vector2(0.90625, 0.890625)
+texture = ExtResource("5_wvf1o")
+
+[node name="ArrowRightBlackOutlineMd" type="Sprite2D" parent="."]
+position = Vector2(164, 316)
+texture = ExtResource("6_1vke3")
+
+[node name="Label4" type="Label" parent="ArrowRightBlackOutlineMd"]
+offset_left = -143.0
+offset_top = -105.0
+offset_right = -20.0
+offset_bottom = -62.0
+theme_override_colors/font_color = Color(0.98608834, 0.46582115, 0.13644552, 1)
+theme_override_fonts/font = ExtResource("7_1wttx")
+theme_override_font_sizes/font_size = 42
+text = "Phase 0: "
+
+[node name="Label5" type="Label" parent="ArrowRightBlackOutlineMd"]
+offset_left = -144.0
+offset_top = -54.0
+offset_right = 107.0
+offset_bottom = 54.0
+theme_override_colors/font_color = Color(0.98608834, 0.46582115, 0.13644552, 1)
+theme_override_fonts/font = ExtResource("3_asssd")
+theme_override_font_sizes/font_size = 22
+text = "Learn the basics of programming blocks to move your robot straight ahead."
+autowrap_mode = 3
+
+[node name="ArrowRightBlackOutlineMd2" type="Sprite2D" parent="."]
+position = Vector2(480, 316)
+texture = ExtResource("6_1vke3")
+
+[node name="Label4" type="Label" parent="ArrowRightBlackOutlineMd2"]
+offset_left = -143.0
+offset_top = -105.0
+offset_right = -20.0
+offset_bottom = -62.0
+theme_override_colors/font_color = Color(0.7701472, 0.34031639, 0.026184477, 1)
+theme_override_fonts/font = ExtResource("7_1wttx")
+theme_override_font_sizes/font_size = 42
+text = "Phase 1: "
+
+[node name="Label5" type="Label" parent="ArrowRightBlackOutlineMd2"]
+offset_left = -136.0
+offset_top = -56.0
+offset_right = 63.0
+offset_bottom = 52.0
+theme_override_colors/font_color = Color(0.7701472, 0.34031639, 0.026184477, 1)
+theme_override_fonts/font = ExtResource("3_asssd")
+theme_override_font_sizes/font_size = 22
+text = "Build a spiral algorithm to help the robot clean efficiently."
+autowrap_mode = 3
+
+[node name="ArrowRightBlackOutlineMd3" type="Sprite2D" parent="."]
+position = Vector2(796, 317)
+texture = ExtResource("6_1vke3")
+
+[node name="Label4" type="Label" parent="ArrowRightBlackOutlineMd3"]
+offset_left = -143.0
+offset_top = -105.0
+offset_right = -20.0
+offset_bottom = -62.0
+theme_override_colors/font_color = Color(0.59466285, 0.2555075, 0.0120044835, 1)
+theme_override_fonts/font = ExtResource("7_1wttx")
+theme_override_font_sizes/font_size = 42
+text = "Phase 2: "
+
+[node name="Label5" type="Label" parent="ArrowRightBlackOutlineMd3"]
+offset_left = -140.0
+offset_top = -53.0
+offset_right = 91.0
+offset_bottom = 19.0
+theme_override_colors/font_color = Color(0.59466285, 0.2555075, 0.0120044835, 1)
+theme_override_fonts/font = ExtResource("3_asssd")
+theme_override_font_sizes/font_size = 22
+text = "Explore how a random algorithm changes the robot’s movement."
+autowrap_mode = 3
+
+[connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]
