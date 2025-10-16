@@ -1,21 +1,44 @@
-[gd_scene load_steps=4 format=3 uid="uid://0mw828013ia0"]
+[gd_scene load_steps=6 format=3 uid="uid://0mw828013ia0"]
 
 [ext_resource type="Script" uid="uid://clqqvlpkm1km1" path="res://Scripts/code_block.gd" id="1_tqm1s"]
 [ext_resource type="Texture2D" uid="uid://db7p5lde12lqi" path="res://icon.svg" id="2_hstm6"]
+[ext_resource type="FontFile" uid="uid://b4y7mlc65y48" path="res://Fonts/VCR_OSD_MONO_1.001.ttf" id="3_hstm6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iv3ps"]
+size = Vector2(242.99998, 58)
+
+[sub_resource type="Theme" id="Theme_iv3ps"]
+default_font = ExtResource("3_hstm6")
+default_font_size = 45
 
 [node name="CodeBlock" type="Node2D"]
 script = ExtResource("1_tqm1s")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 0.5)
 texture = ExtResource("2_hstm6")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-scale = Vector2(6, 6)
 shape = SubResource("RectangleShape2D_iv3ps")
+
+[node name="TextLabel" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -110.5
+offset_top = -20.15625
+offset_right = 110.5
+offset_bottom = 20.15625
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_iv3ps")
+text = "TEXT"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

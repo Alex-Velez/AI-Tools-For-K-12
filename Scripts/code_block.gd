@@ -1,12 +1,40 @@
 extends Node2D
 
+@export var block_type: BlockType = BlockType.NULL;
+
 var is_draggable = false
 var is_inside_droppable = false
 var body_reference
 var offset: Vector2
 var initial_position: Vector2
+var text: String
 
 const ANIMATION_SPEED = 0.2
+
+enum BlockType {
+	NULL,
+	And,
+	Or,
+	MoveForward,
+	MoveBackward,
+	MoveRandom,
+	TurnRight,
+	TurnLeft,
+	Turn180,
+	TurnRandom,
+	IsObstacleFront,
+	IsObstacleRight,
+	IsObstacleLeft,
+	IsSpaceTravelledFront,
+	IsSpaceTravelledRight,
+	IsSpaceTravelledLeft,
+}
+
+func _ready() -> void:
+	match self.block_type:
+		BlockType.And:
+			pass
+	pass
 
 func _process(_delta: float) -> void:
 	if is_draggable:
@@ -45,12 +73,17 @@ func _on_area_2d_mouse_exited() -> void:
 		scale = Vector2(1, 1)
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body_reference != null and body.position == body_reference.position:
+		return
 	if body.is_in_group("Droppable"):
 		is_inside_droppable = true
 		body.modulate = Color(Color.REBECCA_PURPLE, 1)
 		body_reference = body
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
+	if body_reference != null and body.position == body_reference.position:
+		return
 	if body.is_in_group("Droppable"):
 		is_inside_droppable = false
 		body.modulate = Color(Color.MEDIUM_PURPLE, 0.7)
+	
