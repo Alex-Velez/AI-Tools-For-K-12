@@ -10,6 +10,7 @@ func _on_start_button_pressed() -> void:
 	var first_name = first_name_box.text.strip_edges()
 	var last_name = last_name_box.text.strip_edges()
 	
+	
 	if first_name == "" or last_name == "":
 		print("Please enter both names")
 		return

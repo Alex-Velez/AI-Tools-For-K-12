@@ -1,22 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://d3pco7ohrte2y"]
+[gd_scene load_steps=7 format=3 uid="uid://d3pco7ohrte2y"]
 
 [ext_resource type="Script" uid="uid://c2qk7lw7aa7wj" path="res://Scripts/main_menu.gd" id="1_28flt"]
 [ext_resource type="Texture2D" uid="uid://db7p5lde12lqi" path="res://icon.svg" id="2_48xlc"]
-
-[sub_resource type="FontFile" id="FontFile_1ehe0"]
-cache/0/56/0/ascent = 0.0
-cache/0/56/0/descent = 0.0
-cache/0/56/0/underline_position = 0.0
-cache/0/56/0/underline_thickness = 0.0
-cache/0/56/0/scale = 1.0
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-
-[sub_resource type="LabelSettings" id="LabelSettings_28flt"]
-font_size = 56
+[ext_resource type="Texture2D" uid="uid://cjv22ir2mf6m2" path="res://Sprites/blueandpurplecheckers.webp" id="2_n45e2"]
+[ext_resource type="Texture2D" uid="uid://cm6incwyahcps" path="res://Sprites/light yellow checkers.jpg" id="2_opfnp"]
+[ext_resource type="FontFile" uid="uid://bn3wgm4rrubhy" path="res://fonts/RougeVintage.ttf" id="3_n45e2"]
+[ext_resource type="FontFile" uid="uid://bi8egcam55ec8" path="res://fonts/Camcode Free.ttf" id="6_opfnp"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -36,8 +25,50 @@ anchor_right = 1.0018518
 anchor_bottom = 1.0016447
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.44615185, 0.40771052, 1, 1)
+color = Color(0.8562568, 0.5992301, 0.29052353, 1)
 metadata/_edit_use_anchors_ = true
+
+[node name="LightYellowCheckers2" type="Sprite2D" parent="Background Color"]
+position = Vector2(957, 516)
+texture = ExtResource("2_opfnp")
+
+[node name="LightYellowCheckers" type="Sprite2D" parent="Background Color"]
+position = Vector2(339, 516)
+texture = ExtResource("2_opfnp")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 204.0
+offset_top = 228.0
+offset_right = 879.0
+offset_bottom = 377.0
+color = Color(0.4569363, 0.6636642, 0.7249347, 1)
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 191.0
+offset_top = 140.0
+offset_right = 937.0
+offset_bottom = 208.0
+theme_override_colors/font_color = Color(0.4569363, 0.6636642, 0.7249347, 1)
+theme_override_fonts/font = ExtResource("3_n45e2")
+theme_override_font_sizes/font_size = 71
+text = "Welcome to RowdyRobo"
+
+[node name="Label2" type="Label" parent="Label3"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 2.0
+offset_top = -39.0
+offset_right = 748.0
+offset_bottom = 26.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.22038415, 0.36593297, 0.408222, 1)
+theme_override_fonts/font = ExtResource("3_n45e2")
+theme_override_font_sizes/font_size = 71
+text = "Welcome to RowdyRobo"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -46,21 +77,12 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -181.0
-offset_top = -50.5
-offset_right = 181.0
-offset_bottom = 50.5
+offset_left = -329.0
+offset_top = -68.0
+offset_right = 332.0
+offset_bottom = 81.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Label" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.38039216, 0.25882354, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = SubResource("FontFile_1ehe0")
-text = "Welcome to RowdyRoboVac!"
-label_settings = SubResource("LabelSettings_28flt")
 
 [node name="FirstNameLineEdit" type="LineEdit" parent="VBoxContainer"]
 layout_mode = 2
@@ -91,8 +113,32 @@ layout_mode = 2
 text = "Start"
 
 [node name="Robotsprite" type="Sprite2D" parent="."]
-position = Vector2(536, 507.00006)
-scale = Vector2(0.78333324, 0.7455554)
+position = Vector2(141, 497)
+scale = Vector2(1.1338542, 1.0368395)
 texture = ExtResource("2_48xlc")
+
+[node name="Blueandpurplecheckers2" type="Sprite2D" parent="."]
+position = Vector2(2338.9998, 658)
+scale = Vector2(2.3576922, 2.3576925)
+texture = ExtResource("2_n45e2")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 222.00006
+offset_top = 416.0
+offset_right = 1069.0
+offset_bottom = 532.0
+
+[node name="Label4" type="Label" parent="ColorRect2"]
+layout_mode = 0
+offset_left = 14.999939
+offset_top = 11.0
+offset_right = 858.99994
+offset_bottom = 116.0
+theme_override_colors/font_color = Color(0.19886053, 0.3344075, 0.37375695, 1)
+theme_override_fonts/font = ExtResource("6_opfnp")
+theme_override_font_sizes/font_size = 24
+text = "Hey there! I’m RowdyRobo, and I’ve got some rooms to clean. Want to help me learn cool algorithms so I can finish my tasks quicker? I need your help! "
+autowrap_mode = 3
 
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
