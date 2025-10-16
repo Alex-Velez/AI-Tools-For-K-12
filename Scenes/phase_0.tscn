@@ -1,6 +1,5 @@
-[gd_scene load_steps=4 format=3 uid="uid://bfyys824p5lua"]
+[gd_scene load_steps=3 format=3 uid="uid://bfyys824p5lua"]
 
-[ext_resource type="Script" uid="uid://belotrk06v48v" path="res://Scripts/phase_0.gd" id="1_aobwp"]
 [ext_resource type="PackedScene" uid="uid://cc8lnwawr8fkr" path="res://Scenes/block_platform.tscn" id="2_w7xn5"]
 [ext_resource type="PackedScene" uid="uid://0mw828013ia0" path="res://Scenes/code_block.tscn" id="3_6cuvu"]
 
@@ -12,7 +11,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-script = ExtResource("1_aobwp")
 
 [node name="AcceptDialog" type="AcceptDialog" parent="."]
 oversampling_override = 1.0
@@ -24,20 +22,29 @@ dialog_text = "Hello! I'll be here to guide you! Begin by dragging a code block 
 dialog_autowrap = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
-offset_left = 285.0
-offset_top = 345.0
-offset_right = 325.0
-offset_bottom = 385.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -346.0
+offset_top = -238.0
+offset_right = -163.0
+offset_bottom = 238.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.59270585, 0.4239798, 0.3735871, 1)
 
 [node name="BlockPlatform" parent="." instance=ExtResource("2_w7xn5")]
-position = Vector2(143, 455)
+position = Vector2(288, 440)
 
 [node name="BlockPlatform2" parent="." instance=ExtResource("2_w7xn5")]
-position = Vector2(854, 186)
+position = Vector2(288, 306)
+
+[node name="BlockPlatform3" parent="." instance=ExtResource("2_w7xn5")]
+position = Vector2(288, 173)
 
 [node name="CodeBlock" parent="." instance=ExtResource("3_6cuvu")]
 position = Vector2(643, 453)
-
-[connection signal="mouse_entered" from="ColorRect" to="." method="_on_color_rect_mouse_entered"]
-[connection signal="mouse_exited" from="ColorRect" to="." method="_on_color_rect_mouse_exited"]
