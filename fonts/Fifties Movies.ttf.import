@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://bdv1r0sxwfw6v"
-path="res://.godot/imported/Fifties Movies.ttf-6344060ba48d77eda854112ee6da990b.fontdata"
+path="res://.godot/imported/Fifties Movies.ttf-6f2edb00402ef55f334b19502b11c2d4.fontdata"
 
 [deps]
 
-source_file="res://fonts/Fifties Movies.ttf"
-dest_files=["res://.godot/imported/Fifties Movies.ttf-6344060ba48d77eda854112ee6da990b.fontdata"]
+source_file="res://Fonts/Fifties Movies.ttf"
+dest_files=["res://.godot/imported/Fifties Movies.ttf-6f2edb00402ef55f334b19502b11c2d4.fontdata"]
 
 [params]
 

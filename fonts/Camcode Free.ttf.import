@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://bi8egcam55ec8"
-path="res://.godot/imported/Camcode Free.ttf-00ad991afde99fa75c7c8fddfb087ef9.fontdata"
+path="res://.godot/imported/Camcode Free.ttf-d0f27471763d2c1569df30df406c0d11.fontdata"
 
 [deps]
 
-source_file="res://fonts/Camcode Free.ttf"
-dest_files=["res://.godot/imported/Camcode Free.ttf-00ad991afde99fa75c7c8fddfb087ef9.fontdata"]
+source_file="res://Fonts/Camcode Free.ttf"
+dest_files=["res://.godot/imported/Camcode Free.ttf-d0f27471763d2c1569df30df406c0d11.fontdata"]
 
 [params]
 

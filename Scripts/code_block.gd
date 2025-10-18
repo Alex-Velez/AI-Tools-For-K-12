@@ -77,7 +77,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		return
 	if body.is_in_group("Droppable"):
 		is_inside_droppable = true
-		body.modulate = Color(Color.REBECCA_PURPLE, 1)
+		body.modulate = Color(Color.BLUE, 1)
 		body_reference = body
 
 func _on_area_2d_body_exited(body: Node2D) -> void:

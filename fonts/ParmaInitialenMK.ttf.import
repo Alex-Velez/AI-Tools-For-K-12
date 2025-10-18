@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://bwruclu45hc8f"
-path="res://.godot/imported/ParmaInitialenMK.ttf-6a1fe67dbf8e7bc64eb99f91fa115c6c.fontdata"
+path="res://.godot/imported/ParmaInitialenMK.ttf-72e9bdccf820815a2ea0c1f58ecae8df.fontdata"
 
 [deps]
 
-source_file="res://fonts/ParmaInitialenMK.ttf"
-dest_files=["res://.godot/imported/ParmaInitialenMK.ttf-6a1fe67dbf8e7bc64eb99f91fa115c6c.fontdata"]
+source_file="res://Fonts/ParmaInitialenMK.ttf"
+dest_files=["res://.godot/imported/ParmaInitialenMK.ttf-72e9bdccf820815a2ea0c1f58ecae8df.fontdata"]
 
 [params]
 
