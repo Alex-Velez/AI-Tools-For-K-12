@@ -1,5 +1,7 @@
 extends Node2D
 
+@onready var text_label = $TextLabel
+
 @export var block_type: BlockType = BlockType.NULL;
 
 var is_draggable = false
@@ -32,8 +34,38 @@ enum BlockType {
 
 func _ready() -> void:
 	match self.block_type:
+		BlockType.NULL:
+			text_label.text = "NULL"
 		BlockType.And:
-			pass
+			text_label.text = "And"
+		BlockType.Or:
+			text_label.text = "Or"
+		BlockType.MoveForward:
+			text_label.text = "MoveForward"
+		BlockType.MoveBackward:
+			text_label.text = "MoveBackward"
+		BlockType.MoveRandom:
+			text_label.text = "MoveRandom"
+		BlockType.TurnRight:
+			text_label.text = "TurnRight"
+		BlockType.TurnLeft:
+			text_label.text = "TurnLeft"
+		BlockType.Turn180:
+			text_label.text = "Turn180"
+		BlockType.TurnRandom:
+			text_label.text = "TurnRandom"
+		BlockType.IsObstacleFront:
+			text_label.text = "IsObstacleFront"
+		BlockType.IsObstacleRight:
+			text_label.text = "IsObstacleRight"
+		BlockType.IsObstacleLeft:
+			text_label.text = "IsObstacleLeft"
+		BlockType.IsSpaceTravelledFront:
+			text_label.text = "IsSpaceTravelledFront"
+		BlockType.IsSpaceTravelledRight:
+			text_label.text = "IsSpaceTravelledRight"
+		BlockType.IsSpaceTravelledLeft:
+			text_label.text = "IsSpaceTravelledLeft"
 	pass
 
 func _process(_delta: float) -> void:

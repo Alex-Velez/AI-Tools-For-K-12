@@ -1,13 +1,13 @@
-[gd_scene load_steps=18 format=4 uid="uid://hw1h313n4no"]
+[gd_scene load_steps=18 format=4 uid="uid://b3gkf1pbdggmj"]
 
-[ext_resource type="Script" path="res://Scripts/map_test.gd" id="1_undso"]
+[ext_resource type="Script" uid="uid://cdekuv0s40rlb" path="res://Scripts/map_test.gd" id="1_undso"]
 [ext_resource type="Texture2D" uid="uid://bkctukes8fqvc" path="res://Sprites/yellow checkers.jpeg" id="2_wxtwh"]
 [ext_resource type="Texture2D" uid="uid://blcwmfr2boy30" path="res://Sprites/mockup-bw.png" id="3_cwr8a"]
 [ext_resource type="Texture2D" uid="uid://68cvf1sow5wa" path="res://Sprites/couch.png" id="4_dxmk5"]
 [ext_resource type="Texture2D" uid="uid://cjv22ir2mf6m2" path="res://Sprites/blueandpurplecheckers.webp" id="5_ealyb"]
 [ext_resource type="Texture2D" uid="uid://bu8hdbqdh3keu" path="res://Sprites/table.png" id="6_vev4r"]
 [ext_resource type="Texture2D" uid="uid://dfnkn5qs67hxq" path="res://Sprites/tv.jpg" id="7_he053"]
-[ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="8_qu46u"]
+[ext_resource type="Script" uid="uid://dsji8rwfxsnj5" path="res://Scripts/character_body_2d.gd" id="8_qu46u"]
 [ext_resource type="Texture2D" uid="uid://db7p5lde12lqi" path="res://icon.svg" id="9_rcvmw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wds5w"]
