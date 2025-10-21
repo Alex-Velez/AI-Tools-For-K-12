@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c5ffnc7cx7tsc"]
 
-[ext_resource type="FontFile" uid="uid://bi8egcam55ec8" path="res://fonts/Camcode Free.ttf" id="1_7ovhf"]
-[ext_resource type="FontFile" uid="uid://bn3wgm4rrubhy" path="res://fonts/RougeVintage.ttf" id="2_o3r1i"]
+[ext_resource type="FontFile" uid="uid://bi8egcam55ec8" path="res://Fonts/Camcode Free.ttf" id="1_7ovhf"]
+[ext_resource type="FontFile" uid="uid://bn3wgm4rrubhy" path="res://Fonts/RougeVintage.ttf" id="2_o3r1i"]
 [ext_resource type="Texture2D" uid="uid://db7p5lde12lqi" path="res://icon.svg" id="3_k6nw4"]
 
 [node name="Control" type="Control"]
