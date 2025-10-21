@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://0mw828013ia0"]
 
 [ext_resource type="Script" uid="uid://clqqvlpkm1km1" path="res://Scripts/code_block.gd" id="1_tqm1s"]
-[ext_resource type="Texture2D" uid="uid://db7p5lde12lqi" path="res://icon.svg" id="2_hstm6"]
+[ext_resource type="Texture2D" uid="uid://dx3upwc36sdpy" path="res://Sprites/sg7w4alnxj881.jpg" id="2_hstm6"]
 [ext_resource type="FontFile" uid="uid://b4y7mlc65y48" path="res://Fonts/VCR_OSD_MONO_1.001.ttf" id="3_hstm6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iv3ps"]
@@ -15,7 +15,8 @@ default_font_size = 45
 script = ExtResource("1_tqm1s")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(2, 0.5)
+position = Vector2(0, -1.1622906e-05)
+scale = Vector2(0.27531284, 0.0659841)
 texture = ExtResource("2_hstm6")
 
 [node name="Area2D" type="Area2D" parent="."]
