@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 var speed = 200 
- 
+var visited_tiles = {}
 func _physics_process(_delta):
 	# setup direction of movement
 	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
@@ -13,9 +13,14 @@ func _physics_process(_delta):
 		direction.x = 0
 	else:
 		direction = Vector2.ZERO
-	
+
 	#normalize the directional movement
 	direction = direction.normalized()
 	# setup the actual movement
 	velocity = (direction * speed)
 	move_and_slide()
+	
+	
+	
+	
+	
