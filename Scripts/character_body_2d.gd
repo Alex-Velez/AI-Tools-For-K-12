@@ -13,6 +13,7 @@ func _physics_process(_delta):
 		direction.x = 0
 	else:
 		direction = Vector2.ZERO
+ 
 	
 	#normalize the directional movement
 	direction = direction.normalized()

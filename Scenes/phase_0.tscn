@@ -38,13 +38,14 @@ mouse_filter = 2
 color = Color(0.59270585, 0.4239798, 0.3735871, 1)
 
 [node name="BlockPlatform" parent="." instance=ExtResource("2_w7xn5")]
-position = Vector2(288, 440)
+position = Vector2(707, 670)
 
 [node name="BlockPlatform2" parent="." instance=ExtResource("2_w7xn5")]
-position = Vector2(288, 306)
+position = Vector2(707, 536)
 
 [node name="BlockPlatform3" parent="." instance=ExtResource("2_w7xn5")]
-position = Vector2(288, 173)
+position = Vector2(707, 403)
 
 [node name="CodeBlock" parent="." instance=ExtResource("3_6cuvu")]
-position = Vector2(643, 453)
+position = Vector2(1338, 441)
+block_type = 8

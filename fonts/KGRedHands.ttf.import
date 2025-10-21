@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://5773w4h1ojxq"
-path="res://.godot/imported/KGRedHands.ttf-c7df998693be81edcb3edd2dfa12272e.fontdata"
+path="res://.godot/imported/KGRedHands.ttf-cc957819f4444f5717c7727d47c698d2.fontdata"
 
 [deps]
 
-source_file="res://fonts/KGRedHands.ttf"
-dest_files=["res://.godot/imported/KGRedHands.ttf-c7df998693be81edcb3edd2dfa12272e.fontdata"]
+source_file="res://Fonts/KGRedHands.ttf"
+dest_files=["res://.godot/imported/KGRedHands.ttf-cc957819f4444f5717c7727d47c698d2.fontdata"]
 
 [params]
 
