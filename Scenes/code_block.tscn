@@ -15,6 +15,7 @@ default_font_size = 45
 script = ExtResource("1_tqm1s")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.21770102, 0.21770105, 0.21770105, 1)
 position = Vector2(0, -1.1622906e-05)
 scale = Vector2(0.27531284, 0.0659841)
 texture = ExtResource("2_hstm6")
