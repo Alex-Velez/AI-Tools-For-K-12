@@ -12,9 +12,16 @@ func _ready() -> void:
 var visited_tiles = {}
 var perc_cleaned = 0.0
 var final_performance = 0.0
+var performance = 0.0
+@onready var timer = $Timer
+@onready var label = $Timer2
+
 
 func _process(delta):
-	
+	var room1Label = $Room1Score
+	#var room2Label = $Room2Score
+	var time_left = timer.get_time_left()
+	label.set_text(str(time_left).pad_decimals(1))
 	$Bedroom/floor.set_cell(Vector2i(-33,-22), 5, Vector2i(16,5),0)
 	var tile_pos = $Bedroom/floor.local_to_map($robot.position)
 	var total_tiles = 1196-60#240 - 63
@@ -28,10 +35,15 @@ func _process(delta):
 		#print("visted new tile: ", tile_pos, " and size: ", visited_tiles.size())
 		perc_cleaned = float(visited_tiles.size()) / total_tiles * 100
 		print("Tiles cleaned: %d / %d (%.2f%%)" % [visited_tiles.size(), total_tiles, perc_cleaned])
-	
+		performance =  "%.2f" % perc_cleaned
+		room1Label.text = "Score: " + str(performance)
 	
 
+
+
+
 func _on_timer_timeout() -> void:
+
 	final_performance =  "%.2f" % perc_cleaned
 	print("final performance metrics: ", final_performance, "%", "visited tiles set: ", visited_tiles)
 	pass # Replace with function body.

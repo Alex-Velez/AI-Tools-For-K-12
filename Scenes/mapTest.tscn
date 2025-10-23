@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://bxs7a7tj74d4y"]
+[gd_scene load_steps=35 format=4 uid="uid://bxs7a7tj74d4y"]
 
 [ext_resource type="Texture2D" uid="uid://bkctukes8fqvc" path="res://Sprites/yellow checkers.jpeg" id="1_hpnym"]
 [ext_resource type="Script" uid="uid://cdekuv0s40rlb" path="res://Scripts/map_test.gd" id="1_olipy"]
@@ -15,6 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://dp1ihws0vyeya" path="res://Sprites/kitchen_stove.png" id="7_rxanv"]
 [ext_resource type="Texture2D" uid="uid://ddbd8qvgdxfuf" path="res://Sprites/Tileset.png" id="8_q684h"]
 [ext_resource type="Texture2D" uid="uid://bo5sch7cenow8" path="res://Sprites/wallsandstuff.png" id="12_iwi8l"]
+[ext_resource type="FontFile" uid="uid://duet0ln2qsyd3" path="res://Fonts/American Captain.ttf" id="16_qu46u"]
+[ext_resource type="FontFile" uid="uid://bi8egcam55ec8" path="res://Fonts/Camcode Free.ttf" id="17_rcvmw"]
 
 [sub_resource type="GDScript" id="GDScript_he053"]
 resource_name = "bedroom"
@@ -7103,6 +7105,8 @@ sources/12 = SubResource("TileSetAtlasSource_ox6km")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y1u6x"]
 size = Vector2(33, 33)
 
+[sub_resource type="Theme" id="Theme_rcvmw"]
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_olipy")
 
@@ -7181,5 +7185,29 @@ shape = SubResource("RectangleShape2D_y1u6x")
 wait_time = 15.0
 one_shot = true
 autostart = true
+
+[node name="Room1Score" type="Label" parent="."]
+offset_left = 187.0
+offset_top = 596.0
+offset_right = 813.0
+offset_bottom = 699.0
+theme_override_fonts/font = ExtResource("16_qu46u")
+theme_override_font_sizes/font_size = 40
+
+[node name="Room2Score" type="Label" parent="."]
+offset_left = 1096.0
+offset_top = 591.0
+offset_right = 1722.0
+offset_bottom = 694.0
+
+[node name="Timer2" type="Label" parent="."]
+offset_left = 829.0
+offset_top = 597.0
+offset_right = 1053.0
+offset_bottom = 700.0
+theme = SubResource("Theme_rcvmw")
+theme_override_fonts/font = ExtResource("17_rcvmw")
+theme_override_font_sizes/font_size = 60
+horizontal_alignment = 1
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
