@@ -41,31 +41,31 @@ func _ready() -> void:
 		BlockType.Or:
 			text_label.text = "Or"
 		BlockType.MoveForward:
-			text_label.text = "MoveForward"
+			text_label.text = "Move Forward"
 		BlockType.MoveBackward:
-			text_label.text = "MoveBackward"
+			text_label.text = "Move Backward"
 		BlockType.MoveRandom:
-			text_label.text = "MoveRandom"
+			text_label.text = "Move Random"
 		BlockType.TurnRight:
-			text_label.text = "TurnRight"
+			text_label.text = "Turn Right"
 		BlockType.TurnLeft:
-			text_label.text = "TurnLeft"
+			text_label.text = "Turn Left"
 		BlockType.Turn180:
-			text_label.text = "Turn180"
+			text_label.text = "Turn 180"
 		BlockType.TurnRandom:
-			text_label.text = "TurnRandom"
+			text_label.text = "Turn Random"
 		BlockType.IsObstacleFront:
-			text_label.text = "IsObstacleFront"
+			text_label.text = "Is Obstacle Front"
 		BlockType.IsObstacleRight:
-			text_label.text = "IsObstacleRight"
+			text_label.text = "Is Obstacle Right"
 		BlockType.IsObstacleLeft:
-			text_label.text = "IsObstacleLeft"
+			text_label.text = "Is Obstacle Left"
 		BlockType.IsSpaceTravelledFront:
-			text_label.text = "IsSpaceTravelledFront"
+			text_label.text = "Is Space Travelled Front"
 		BlockType.IsSpaceTravelledRight:
-			text_label.text = "IsSpaceTravelledRight"
+			text_label.text = "Is Space Travelled Right"
 		BlockType.IsSpaceTravelledLeft:
-			text_label.text = "IsSpaceTravelledLeft"
+			text_label.text = "Is Space Travelled Left"
 	pass
 
 func _process(_delta: float) -> void:
