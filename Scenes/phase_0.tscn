@@ -12,48 +12,123 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 40
+
+[node name="ColorRect3" type="ColorRect" parent="HBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(900, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+color = Color(0.80936164, 0.64012164, 0.6759462, 1)
+
+[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 40
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer/MarginContainer2"]
+custom_minimum_size = Vector2(900, 0)
+layout_mode = 2
+mouse_filter = 2
+color = Color(0.59270585, 0.4239798, 0.3735871, 1)
+
 [node name="AcceptDialog" type="AcceptDialog" parent="."]
 oversampling_override = 1.0
 title = "Rowdy Robo!"
 initial_position = 4
 size = Vector2i(272, 132)
-visible = true
 dialog_text = "Hello! I'll be here to guide you! Begin by dragging a code block into the main loop!"
 dialog_autowrap = true
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -420.0
-offset_top = -238.0
-offset_right = -74.0
-offset_bottom = 238.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-color = Color(0.59270585, 0.4239798, 0.3735871, 1)
+[node name="PlatformContainer" type="Node2D" parent="."]
 
-[node name="BlockPlatform" parent="." instance=ExtResource("2_w7xn5")]
-position = Vector2(707, 670)
+[node name="BlockPlatform" parent="PlatformContainer" instance=ExtResource("2_w7xn5")]
+position = Vector2(403, 458)
 
-[node name="BlockPlatform2" parent="." instance=ExtResource("2_w7xn5")]
-position = Vector2(707, 536)
+[node name="BlockPlatform2" parent="PlatformContainer" instance=ExtResource("2_w7xn5")]
+position = Vector2(403, 324)
 
-[node name="BlockPlatform3" parent="." instance=ExtResource("2_w7xn5")]
-position = Vector2(707, 403)
+[node name="BlockPlatform3" parent="PlatformContainer" instance=ExtResource("2_w7xn5")]
+position = Vector2(267, 191)
 
-[node name="CodeBlock" parent="." instance=ExtResource("3_6cuvu")]
-position = Vector2(1338, 441)
-block_type = 8
+[node name="BlockPlatform4" parent="PlatformContainer" instance=ExtResource("2_w7xn5")]
+position = Vector2(403, 863)
 
-[node name="CodeBlock2" parent="." instance=ExtResource("3_6cuvu")]
-position = Vector2(1338, 536)
+[node name="BlockPlatform5" parent="PlatformContainer" instance=ExtResource("2_w7xn5")]
+position = Vector2(403, 729)
+
+[node name="BlockPlatform6" parent="PlatformContainer" instance=ExtResource("2_w7xn5")]
+position = Vector2(272, 596)
+
+[node name="CodeBlockContainer" type="Node2D" parent="."]
+
+[node name="CodeBlock" parent="CodeBlockContainer" instance=ExtResource("3_6cuvu")]
+position = Vector2(1263, 171)
+block_type = 10
+
+[node name="CodeBlock2" parent="CodeBlockContainer" instance=ExtResource("3_6cuvu")]
+position = Vector2(1263, 266)
+block_type = 11
+
+[node name="CodeBlock3" parent="CodeBlockContainer" instance=ExtResource("3_6cuvu")]
+position = Vector2(1263, 369)
+block_type = 12
+
+[node name="CodeBlock4" parent="CodeBlockContainer" instance=ExtResource("3_6cuvu")]
+position = Vector2(1263, 478)
+block_type = 13
+
+[node name="CodeBlock5" parent="CodeBlockContainer" instance=ExtResource("3_6cuvu")]
+position = Vector2(1263, 573)
+block_type = 14
+
+[node name="CodeBlock6" parent="CodeBlockContainer" instance=ExtResource("3_6cuvu")]
+position = Vector2(1263, 676)
+block_type = 15
+
+[node name="CodeBlock7" parent="CodeBlockContainer" instance=ExtResource("3_6cuvu")]
+position = Vector2(1613, 171)
 block_type = 3
 
-[node name="CodeBlock3" parent="." instance=ExtResource("3_6cuvu")]
-position = Vector2(1338, 639)
+[node name="CodeBlock8" parent="CodeBlockContainer" instance=ExtResource("3_6cuvu")]
+position = Vector2(1613, 266)
+block_type = 4
+
+[node name="CodeBlock9" parent="CodeBlockContainer" instance=ExtResource("3_6cuvu")]
+position = Vector2(1613, 369)
+block_type = 5
+
+[node name="CodeBlock10" parent="CodeBlockContainer" instance=ExtResource("3_6cuvu")]
+position = Vector2(1613, 478)
 block_type = 6
+
+[node name="CodeBlock11" parent="CodeBlockContainer" instance=ExtResource("3_6cuvu")]
+position = Vector2(1613, 573)
+block_type = 7
+
+[node name="CodeBlock12" parent="CodeBlockContainer" instance=ExtResource("3_6cuvu")]
+position = Vector2(1613, 676)
+block_type = 9

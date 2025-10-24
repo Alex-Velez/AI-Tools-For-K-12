@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://b4y7mlc65y48" path="res://Fonts/VCR_OSD_MONO_1.001.ttf" id="3_hstm6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iv3ps"]
-size = Vector2(242.99998, 58)
+size = Vector2(317, 58)
 
 [sub_resource type="Theme" id="Theme_iv3ps"]
 default_font = ExtResource("3_hstm6")
@@ -14,15 +14,26 @@ default_font_size = 45
 [node name="CodeBlock" type="Node2D"]
 script = ExtResource("1_tqm1s")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.21770102, 0.21770105, 0.21770105, 1)
-position = Vector2(0, -1.1622906e-05)
-scale = Vector2(0.27531284, 0.0659841)
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.57540065, 0.16712877, 0.18016794, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -159.5
+offset_top = -30.0
+offset_right = 159.5
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_hstm6")
+expand_mode = 2
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1.5000038, 0)
 shape = SubResource("RectangleShape2D_iv3ps")
 
 [node name="TextLabel" type="Label" parent="."]
@@ -31,16 +42,19 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -110.5
+offset_left = -152.0
 offset_top = -20.15625
-offset_right = 110.5
+offset_right = 152.0
 offset_bottom = 20.15625
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_iv3ps")
+theme_override_font_sizes/font_size = 30
 text = "TEXT"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

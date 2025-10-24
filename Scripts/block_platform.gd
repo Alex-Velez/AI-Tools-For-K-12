@@ -1,5 +1,7 @@
 extends StaticBody2D
 
+var current_code_block
+
 func _ready() -> void:
 	modulate = Color(Color.MAGENTA)
 	

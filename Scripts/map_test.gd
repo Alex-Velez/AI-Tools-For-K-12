@@ -11,10 +11,10 @@ func _ready() -> void:
 #var time_accum = 0.0
 var visited_tiles = {}
 var perc_cleaned = 0.0
-var final_performance = 0.0
+var final_performance: float = 0.0
+var performance_history = []
 
-func _process(delta):
-	
+func _process(_delta):
 	$Bedroom/floor.set_cell(Vector2i(-33,-22), 5, Vector2i(16,5),0)
 	var tile_pos = $Bedroom/floor.local_to_map($robot.position)
 	var total_tiles = 1196-60#240 - 63
@@ -28,10 +28,8 @@ func _process(delta):
 		#print("visted new tile: ", tile_pos, " and size: ", visited_tiles.size())
 		perc_cleaned = float(visited_tiles.size()) / total_tiles * 100
 		print("Tiles cleaned: %d / %d (%.2f%%)" % [visited_tiles.size(), total_tiles, perc_cleaned])
-	
-	
 
 func _on_timer_timeout() -> void:
-	final_performance =  "%.2f" % perc_cleaned
-	print("final performance metrics: ", final_performance, "%", "visited tiles set: ", visited_tiles)
-	pass # Replace with function body.
+	print("final performance metrics: ", "%.2f" % perc_cleaned, "%", "visited tiles set: ", visited_tiles)
+	Global.current_student.performance_history.append(perc_cleaned)
+	Global.save_data(Global.current_student.get_data())
