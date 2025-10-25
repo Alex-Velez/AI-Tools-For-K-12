@@ -6,9 +6,25 @@ var current_student: Student = null;
 
 var is_dragging = false
 
+enum CodeAction {
+	NULL,
+	MoveForward,
+	MoveBackward,
+	MoveRandom,
+	TurnRight,
+	TurnLeft,
+	Turn180,
+	TurnRandom,
+	IsObstacleFront,
+	IsObstacleRight,
+	IsObstacleLeft,
+	IsSpaceTravelledFront,
+	IsSpaceTravelledRight,
+	IsSpaceTravelledLeft,
+}
+
 func _ready():
 	print("Global Autoload ready!")
-
 
 func save_data(data: Array):
 	if not FileAccess.file_exists(Global.CSV_PATH):

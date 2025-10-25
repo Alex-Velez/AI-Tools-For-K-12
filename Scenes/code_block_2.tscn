@@ -1,58 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://gmeoe7uq2h4l"]
+[gd_scene load_steps=3 format=3 uid="uid://gmeoe7uq2h4l"]
 
-[ext_resource type="Script" uid="uid://clqqvlpkm1km1" path="res://Scripts/code_block.gd" id="1_kkm7f"]
-[ext_resource type="Texture2D" uid="uid://dx3upwc36sdpy" path="res://Sprites/sg7w4alnxj881.jpg" id="1_yj5yh"]
-[ext_resource type="FontFile" uid="uid://b4y7mlc65y48" path="res://Fonts/VCR_OSD_MONO_1.001.ttf" id="2_bwegr"]
+[ext_resource type="Theme" uid="uid://bq1jodwh5ubj1" path="res://Themes/CodeBlockTheme.theme" id="1_yj5yh"]
+[ext_resource type="Script" uid="uid://fql13ewgyrla" path="res://Scripts/code_block_2.gd" id="2_bwegr"]
 
-[sub_resource type="Theme" id="Theme_kkm7f"]
-default_font = ExtResource("2_bwegr")
-default_font_size = 45
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bwegr"]
-size = Vector2(332, 58)
-
-[node name="CodeBlock" type="Control"]
-layout_mode = 3
-anchors_preset = 0
-script = ExtResource("1_kkm7f")
-
-[node name="TextureRect" type="TextureRect" parent="."]
-modulate = Color(0.6181877, 0, 0.116522364, 1)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -166.0
-offset_top = -28.5
-offset_right = 166.0
-offset_bottom = 28.5
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("1_yj5yh")
-expand_mode = 2
-
-[node name="TextLabel" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -158.5
-offset_top = -20.15625
-offset_right = 158.5
-offset_bottom = 20.15625
-grow_horizontal = 2
-grow_vertical = 2
-theme = SubResource("Theme_kkm7f")
-text = "TEXTTEXTTEXT"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-3.8146973e-06, 0)
-shape = SubResource("RectangleShape2D_bwegr")
+[node name="CodeBlock" type="Button"]
+custom_minimum_size = Vector2(200, 50)
+theme = ExtResource("1_yj5yh")
+text = "NORMALCODEBLOCK"
+script = ExtResource("2_bwegr")
