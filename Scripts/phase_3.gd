@@ -19,7 +19,7 @@ func _on_play_button_pressed() -> void:
 func _run_user_code():
 	for action in user_code:
 		#highlight_block(action)
-		print("Running: ", action)
+		print("Running: ", Global.CodeAction.keys()[action])
 		#await robot.perform_action(action)
 		await get_tree().create_timer(0.5).timeout
 	#reset_highlights()

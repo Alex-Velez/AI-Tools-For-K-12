@@ -1,13 +1,20 @@
-extends Panel
+extends Button
 
 var assigned_action: Global.CodeAction = Global.CodeAction.NULL
+var is_hovering: bool = false;
 
-func can_drop_data(_pos, data):
-	return "action" in data
+func _ready() -> void:
+	self.mouse_entered.connect(_on_mouse_entered)
+	self.mouse_exited.connect(_on_mouse_exited)
 
-func drop_data(_pos, data):
-	assigned_action = data["action"]
-	update_visual()
+func _process(_delta: float) -> void:
+	if self.is_hovering and Global.holding_action != Global.CodeAction.NULL and !Global.is_dragging:
+		self.assigned_action = Global.holding_action
+		Global.holding_action = Global.CodeAction.NULL
+		self.text = Global.CodeAction.keys()[self.assigned_action]
 
-func update_visual():
-	modulate = Color.WEB_GREEN
+func _on_mouse_entered():
+	self.is_hovering = true
+
+func _on_mouse_exited():
+	self.is_hovering = false
