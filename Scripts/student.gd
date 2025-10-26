@@ -1,14 +1,14 @@
 class_name Student extends Resource
 
-@export var first_name: String
-@export var last_name: String
-@export var grade: int
-@export var performance_history: Array
+var first_name: String
+var last_name: String
+var grade: int
+var performance_history: Array
 
-func _init(first_name: String, last_name: String, grade: int) -> void:
-	self.first_name = first_name
-	self.last_name = last_name
-	self.grade = grade
+func _init(f_name: String, l_name: String, s_grade: int) -> void:
+	self.first_name = f_name
+	self.last_name = l_name
+	self.grade = s_grade
 	self.performance_history = []
 
 func get_data() -> Array:

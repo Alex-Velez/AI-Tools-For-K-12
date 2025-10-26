@@ -24,8 +24,16 @@ func _on_start_button_pressed() -> void:
 	
 	var new_student = Student.new(first_name, last_name, grade_dropdown.selected + 5)
 	
+	# check if student alreayd exists
+	var file = FileAccess.open(Global.CSV_PATH, FileAccess.READ)
+	var file_content = file.get_as_text()
+	file.close()
+	if new_student.get_data_csv() in file_content:
+		print("Student already exists")
+		return
+	
 	Global.current_student = new_student
-	print("Saved student")
+	print("Cached student")
 	
 	get_tree().change_scene_to_file("res://Scenes/welcome_screen.tscn")
 	pass

@@ -20,12 +20,9 @@ enum CodeAction {
 }
 
 var current_student: Student = null;
-
 var is_dragging: bool = false
 var holding_code_block: Sprite2D = null
 var holding_action: CodeAction = CodeAction.NULL
-
-
 
 func _ready():
 	print("Global Autoload ready!")
