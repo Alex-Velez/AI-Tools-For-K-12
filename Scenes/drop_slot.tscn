@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b33arxy53t1vu"]
+
+[ext_resource type="Script" uid="uid://onkqc1bp22uj" path="res://Scripts/drop_slot.gd" id="1_w8bb6"]
+
+[node name="DropSlot" type="Panel"]
+custom_minimum_size = Vector2(0, 90)
+script = ExtResource("1_w8bb6")

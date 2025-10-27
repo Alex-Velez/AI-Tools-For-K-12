@@ -1,0 +1,239 @@
+[gd_scene load_steps=6 format=3 uid="uid://bg0dld4asbh6g"]
+
+[ext_resource type="PackedScene" uid="uid://gmeoe7uq2h4l" path="res://Scenes/code_block_2.tscn" id="1_5xuyg"]
+[ext_resource type="Script" uid="uid://dq8sf47myldlp" path="res://Scripts/phase_3.gd" id="1_bsygr"]
+[ext_resource type="Theme" uid="uid://b5fspwopkw78g" path="res://Themes/MarginTheme.tres" id="1_rvyeb"]
+[ext_resource type="Texture2D" uid="uid://db7p5lde12lqi" path="res://icon.svg" id="3_54a6q"]
+[ext_resource type="PackedScene" uid="uid://bofbrpbd4rj4n" path="res://Scenes/drop_slot_2.tscn" id="5_54a6q"]
+
+[node name="Phase3" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bsygr")
+
+[node name="VSplitContainer" type="VSplitContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+split_offset = 700
+touch_dragger_enabled = true
+
+[node name="TopPanel" type="Panel" parent="VSplitContainer"]
+layout_mode = 2
+
+[node name="HSplitContainer" type="HSplitContainer" parent="VSplitContainer/TopPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+split_offset = 1500
+touch_dragger_enabled = true
+
+[node name="LeftPanel" type="Panel" parent="VSplitContainer/TopPanel/HSplitContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VSplitContainer/TopPanel/HSplitContainer/LeftPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_rvyeb")
+
+[node name="RoomGrid1" type="GridContainer" parent="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/HBoxContainer"]
+layout_mode = 2
+columns = 10
+
+[node name="RoomGrid2" type="GridContainer" parent="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/HBoxContainer"]
+layout_mode = 2
+columns = 10
+
+[node name="Robot" type="Sprite2D" parent="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/HBoxContainer"]
+texture = ExtResource("3_54a6q")
+centered = false
+
+[node name="RightPanel" type="Panel" parent="VSplitContainer/TopPanel/HSplitContainer"]
+clip_contents = true
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VSplitContainer/TopPanel/HSplitContainer/RightPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VSplitContainer/TopPanel/HSplitContainer/RightPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VSplitContainer/TopPanel/HSplitContainer/RightPanel/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_rvyeb")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VSplitContainer/TopPanel/HSplitContainer/RightPanel/VBoxContainer/ScrollContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="DropSlot" parent="VSplitContainer/TopPanel/HSplitContainer/RightPanel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("5_54a6q")]
+layout_mode = 2
+text = "EMPTY"
+
+[node name="DropSlot2" parent="VSplitContainer/TopPanel/HSplitContainer/RightPanel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("5_54a6q")]
+layout_mode = 2
+text = "EMPTY"
+
+[node name="DropSlot3" parent="VSplitContainer/TopPanel/HSplitContainer/RightPanel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("5_54a6q")]
+layout_mode = 2
+text = "EMPTY"
+
+[node name="DropSlot4" parent="VSplitContainer/TopPanel/HSplitContainer/RightPanel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("5_54a6q")]
+layout_mode = 2
+text = "EMPTY"
+
+[node name="DropSlot5" parent="VSplitContainer/TopPanel/HSplitContainer/RightPanel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("5_54a6q")]
+layout_mode = 2
+text = "EMPTY"
+
+[node name="DropSlot6" parent="VSplitContainer/TopPanel/HSplitContainer/RightPanel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("5_54a6q")]
+layout_mode = 2
+text = "EMPTY"
+
+[node name="DropSlot7" parent="VSplitContainer/TopPanel/HSplitContainer/RightPanel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("5_54a6q")]
+layout_mode = 2
+text = "EMPTY"
+
+[node name="DropSlot8" parent="VSplitContainer/TopPanel/HSplitContainer/RightPanel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("5_54a6q")]
+layout_mode = 2
+text = "EMPTY"
+
+[node name="MarginContainer" type="MarginContainer" parent="VSplitContainer/TopPanel/HSplitContainer/RightPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_rvyeb")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VSplitContainer/TopPanel/HSplitContainer/RightPanel/VBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="PlayButton" type="Button" parent="VSplitContainer/TopPanel/HSplitContainer/RightPanel/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Play"
+
+[node name="FastButton" type="Button" parent="VSplitContainer/TopPanel/HSplitContainer/RightPanel/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Speed Up"
+
+[node name="Button3" type="Button" parent="VSplitContainer/TopPanel/HSplitContainer/RightPanel/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Leaderboard"
+
+[node name="BottomPanel" type="Panel" parent="VSplitContainer"]
+clip_contents = true
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VSplitContainer/BottomPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_rvyeb")
+
+[node name="HFlowContainer" type="HFlowContainer" parent="VSplitContainer/BottomPanel/MarginContainer"]
+layout_mode = 2
+
+[node name="CodeBlock" parent="VSplitContainer/BottomPanel/MarginContainer/HFlowContainer" instance=ExtResource("1_5xuyg")]
+layout_mode = 2
+keep_pressed_outside = true
+text = "CODEBLOCK"
+action_type = 1
+
+[node name="CodeBlock2" parent="VSplitContainer/BottomPanel/MarginContainer/HFlowContainer" instance=ExtResource("1_5xuyg")]
+layout_mode = 2
+keep_pressed_outside = true
+text = "CODEBLOCK"
+action_type = 2
+
+[node name="CodeBlock3" parent="VSplitContainer/BottomPanel/MarginContainer/HFlowContainer" instance=ExtResource("1_5xuyg")]
+layout_mode = 2
+keep_pressed_outside = true
+text = "CODEBLOCK"
+action_type = 3
+
+[node name="CodeBlock4" parent="VSplitContainer/BottomPanel/MarginContainer/HFlowContainer" instance=ExtResource("1_5xuyg")]
+layout_mode = 2
+keep_pressed_outside = true
+text = "CODEBLOCK"
+action_type = 4
+
+[node name="CodeBlock5" parent="VSplitContainer/BottomPanel/MarginContainer/HFlowContainer" instance=ExtResource("1_5xuyg")]
+layout_mode = 2
+keep_pressed_outside = true
+text = "CODEBLOCK"
+action_type = 5
+
+[node name="CodeBlock6" parent="VSplitContainer/BottomPanel/MarginContainer/HFlowContainer" instance=ExtResource("1_5xuyg")]
+layout_mode = 2
+keep_pressed_outside = true
+text = "CODEBLOCK"
+action_type = 6
+
+[node name="CodeBlock7" parent="VSplitContainer/BottomPanel/MarginContainer/HFlowContainer" instance=ExtResource("1_5xuyg")]
+layout_mode = 2
+keep_pressed_outside = true
+text = "CODEBLOCK"
+action_type = 7
+
+[node name="CodeBlock8" parent="VSplitContainer/BottomPanel/MarginContainer/HFlowContainer" instance=ExtResource("1_5xuyg")]
+layout_mode = 2
+keep_pressed_outside = true
+text = "CODEBLOCK"
+action_type = 8
+
+[node name="CodeBlock9" parent="VSplitContainer/BottomPanel/MarginContainer/HFlowContainer" instance=ExtResource("1_5xuyg")]
+layout_mode = 2
+keep_pressed_outside = true
+text = "CODEBLOCK"
+action_type = 9
+
+[node name="CodeBlock10" parent="VSplitContainer/BottomPanel/MarginContainer/HFlowContainer" instance=ExtResource("1_5xuyg")]
+layout_mode = 2
+keep_pressed_outside = true
+text = "CODEBLOCK"
+action_type = 10
+
+[node name="CodeBlock11" parent="VSplitContainer/BottomPanel/MarginContainer/HFlowContainer" instance=ExtResource("1_5xuyg")]
+layout_mode = 2
+keep_pressed_outside = true
+text = "CODEBLOCK"
+action_type = 11
+
+[node name="CodeBlock12" parent="VSplitContainer/BottomPanel/MarginContainer/HFlowContainer" instance=ExtResource("1_5xuyg")]
+layout_mode = 2
+keep_pressed_outside = true
+text = "CODEBLOCK"
+action_type = 12
+
+[node name="CodeBlock13" parent="VSplitContainer/BottomPanel/MarginContainer/HFlowContainer" instance=ExtResource("1_5xuyg")]
+layout_mode = 2
+keep_pressed_outside = true
+text = "CODEBLOCK"
+action_type = 13
+
+[connection signal="pressed" from="VSplitContainer/TopPanel/HSplitContainer/RightPanel/VBoxContainer/MarginContainer/HBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
