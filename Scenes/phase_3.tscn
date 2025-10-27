@@ -1,10 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://bg0dld4asbh6g"]
+[gd_scene load_steps=9 format=4 uid="uid://bg0dld4asbh6g"]
 
 [ext_resource type="PackedScene" uid="uid://gmeoe7uq2h4l" path="res://Scenes/code_block_2.tscn" id="1_5xuyg"]
 [ext_resource type="Script" uid="uid://dq8sf47myldlp" path="res://Scripts/phase_3.gd" id="1_bsygr"]
 [ext_resource type="Theme" uid="uid://b5fspwopkw78g" path="res://Themes/MarginTheme.tres" id="1_rvyeb"]
 [ext_resource type="Texture2D" uid="uid://db7p5lde12lqi" path="res://icon.svg" id="3_54a6q"]
+[ext_resource type="TileSet" uid="uid://cr61rcvxrur8h" path="res://TileSets/Room1TileSet.res" id="3_bsygr"]
+[ext_resource type="Script" uid="uid://xdcqf1dl3tvr" path="res://Scripts/robot.gd" id="4_blned"]
 [ext_resource type="PackedScene" uid="uid://bofbrpbd4rj4n" path="res://Scenes/drop_slot_2.tscn" id="5_54a6q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_54a6q"]
+size = Vector2(16, 16)
 
 [node name="Phase3" type="Control"]
 layout_mode = 3
@@ -22,7 +27,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-split_offset = 700
+split_offset = 800
+dragging_enabled = false
 touch_dragger_enabled = true
 
 [node name="TopPanel" type="Panel" parent="VSplitContainer"]
@@ -35,7 +41,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-split_offset = 1500
+split_offset = 1330
+dragging_enabled = false
 touch_dragger_enabled = true
 
 [node name="LeftPanel" type="Panel" parent="VSplitContainer/TopPanel/HSplitContainer"]
@@ -50,17 +57,46 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_rvyeb")
 
-[node name="RoomGrid1" type="GridContainer" parent="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/HBoxContainer"]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/HBoxContainer"]
 layout_mode = 2
-columns = 10
+size_flags_horizontal = 3
+stretch = true
+stretch_shrink = 6
 
-[node name="RoomGrid2" type="GridContainer" parent="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/HBoxContainer"]
-layout_mode = 2
-columns = 10
+[node name="SubViewport" type="SubViewport" parent="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/HBoxContainer/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(110, 133)
+render_target_update_mode = 4
 
-[node name="Robot" type="Sprite2D" parent="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/HBoxContainer"]
+[node name="TileMapLayer" type="TileMapLayer" parent="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/HBoxContainer/SubViewportContainer/SubViewport"]
+tile_map_data = PackedByteArray("AAAGAAIAAQAAAAsAAAAGAAQAAQAAAAsAAAAGAAUAAQAAAAsAAAAGAAYAAQAAAAsAAAAGAAcAAQAAAAsAAAAFAAcAAQAAAAsAAAAEAAcAAQAAAAsAAAADAAcAAQAAAAsAAAACAAcAAQAAAAsAAAABAAcAAQAAAAsAAAAAAAcAAQAAAAsAAAAGAAMAAQAAAAsAAAAGAAEAAQAAAAsAAAAGAAAAAQAAAAsAAAAEAAMAAQAAAAsAAAAEAAQAAQAAAAsAAAADAAQAAQAAAAsAAAACAAQAAQAAAAsAAAABAAQAAQAAAAsAAAADAAIAAQAAAAsAAAADAAMAAQAAAAsAAAA=")
+tile_set = ExtResource("3_bsygr")
+
+[node name="Robot" type="CharacterBody2D" parent="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/HBoxContainer/SubViewportContainer/SubViewport"]
+position = Vector2(7.785, 7.83)
+script = ExtResource("4_blned")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/HBoxContainer/SubViewportContainer/SubViewport/Robot"]
+shape = SubResource("RectangleShape2D_54a6q")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/HBoxContainer/SubViewportContainer/SubViewport/Robot"]
+position = Vector2(0.25000003, 0)
+scale = Vector2(0.12890626, 0.12500001)
 texture = ExtResource("3_54a6q")
-centered = false
+metadata/_edit_lock_ = true
+
+[node name="SubViewportContainer2" type="SubViewportContainer" parent="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/HBoxContainer/SubViewportContainer2"]
+handle_input_locally = false
+size = Vector2i(663, 800)
+render_target_update_mode = 4
+
+[node name="TileMapLayer" type="TileMapLayer" parent="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/HBoxContainer/SubViewportContainer2/SubViewport"]
 
 [node name="RightPanel" type="Panel" parent="VSplitContainer/TopPanel/HSplitContainer"]
 clip_contents = true

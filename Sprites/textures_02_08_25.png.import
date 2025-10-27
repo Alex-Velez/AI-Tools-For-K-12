@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lp7o0a3mfmuk"
-path="res://.godot/imported/house_inside.png-73e814c3f29ee4b661faaceeed6c70fa.ctex"
+uid="uid://opc7nojbuns3"
+path="res://.godot/imported/textures_02_08_25.png-baa6e02c784444c50319343a0f673abe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/house_inside.png"
-dest_files=["res://.godot/imported/house_inside.png-73e814c3f29ee4b661faaceeed6c70fa.ctex"]
+source_file="res://Sprites/textures_02_08_25.png"
+dest_files=["res://.godot/imported/textures_02_08_25.png-baa6e02c784444c50319343a0f673abe.ctex"]
 
 [params]
 
@@ -37,4 +37,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

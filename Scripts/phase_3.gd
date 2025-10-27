@@ -2,7 +2,7 @@ extends Control
 
 @onready var code_blocks_container = $VSplitContainer/BottomPanel/MarginContainer/HFlowContainer
 @onready var code_slots_container = $VSplitContainer/TopPanel/HSplitContainer/RightPanel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer
-@onready var robot = $VSplitContainer/TopPanel/HSplitContainer/LeftPanel/HBoxContainer/Robot
+@onready var robot1 = $VSplitContainer/TopPanel/HSplitContainer/LeftPanel/HBoxContainer/SubViewportContainer/SubViewport/Robot
 
 var user_code: Array[Global.CodeAction] = []
 
@@ -20,6 +20,6 @@ func _run_user_code():
 	for action in user_code:
 		#highlight_block(action)
 		print("Running: ", Global.CodeAction.keys()[action])
-		#await robot.perform_action(action)
+		await robot1.run_action(action)
 		await get_tree().create_timer(0.5).timeout
 	#reset_highlights()

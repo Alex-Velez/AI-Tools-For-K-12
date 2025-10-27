@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://d3pco7ohrte2y"]
+[gd_scene load_steps=15 format=3 uid="uid://d3pco7ohrte2y"]
 
 [ext_resource type="Script" uid="uid://c2qk7lw7aa7wj" path="res://Scripts/main_menu.gd" id="1_28flt"]
 [ext_resource type="Texture2D" uid="uid://db7p5lde12lqi" path="res://icon.svg" id="2_48xlc"]
@@ -8,12 +8,16 @@
 [ext_resource type="Theme" uid="uid://c0lvx4iie64la" path="res://Themes/MainMenuTextEditTheme.theme" id="4_opfnp"]
 [ext_resource type="Shader" uid="uid://c7rip2qb75ywu" path="res://Shaders/main_menu_title.gdshader" id="4_yhxw7"]
 [ext_resource type="Theme" uid="uid://bg6m0u6rl2kgy" path="res://Themes/ToolTipText.theme" id="5_cp0ys"]
+[ext_resource type="Shader" uid="uid://c164surlibc7b" path="res://Shaders/main_menu_robot.gdshader" id="7_trj04"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yhxw7"]
 shader = ExtResource("2_cp0ys")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_trj04"]
 shader = ExtResource("4_yhxw7")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_16hvj"]
+shader = ExtResource("7_trj04")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yhxw7"]
 content_margin_left = 0.0
@@ -138,6 +142,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer2/HBoxContainer"]
+material = SubResource("ShaderMaterial_16hvj")
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 size_flags_vertical = 4
