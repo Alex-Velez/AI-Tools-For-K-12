@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://bxs7a7tj74d4y"]
+[gd_scene load_steps=38 format=4 uid="uid://bxs7a7tj74d4y"]
 
 [ext_resource type="Texture2D" uid="uid://bkctukes8fqvc" path="res://Sprites/yellow checkers.jpeg" id="1_hpnym"]
 [ext_resource type="Script" uid="uid://cdekuv0s40rlb" path="res://Scripts/map_test.gd" id="1_olipy"]
@@ -7105,7 +7105,16 @@ sources/12 = SubResource("TileSetAtlasSource_ox6km")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y1u6x"]
 size = Vector2(33, 33)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rcvmw"]
+bg_color = Color(0.09803922, 0.6039216, 0.11764706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rxanv"]
+bg_color = Color(0.09803922, 0.6039216, 0.11764706, 1)
+
 [sub_resource type="Theme" id="Theme_rcvmw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q684h"]
+bg_color = Color(0.000113828006, 0.00011382805, 0.00011382793, 1)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_olipy")
@@ -7187,27 +7196,32 @@ one_shot = true
 autostart = true
 
 [node name="Room1Score" type="Label" parent="."]
-offset_left = 187.0
-offset_top = 596.0
-offset_right = 813.0
-offset_bottom = 699.0
+offset_left = 226.0
+offset_top = 593.0
+offset_right = 704.0
+offset_bottom = 696.0
 theme_override_fonts/font = ExtResource("16_qu46u")
 theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_rcvmw")
+horizontal_alignment = 1
 
 [node name="Room2Score" type="Label" parent="."]
-offset_left = 1096.0
-offset_top = 591.0
-offset_right = 1722.0
-offset_bottom = 694.0
+offset_left = 1213.0
+offset_top = 594.0
+offset_right = 1657.0
+offset_bottom = 697.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_rxanv")
+horizontal_alignment = 1
 
 [node name="Timer2" type="Label" parent="."]
-offset_left = 829.0
-offset_top = 597.0
-offset_right = 1053.0
-offset_bottom = 700.0
+offset_left = 824.0
+offset_top = 605.0
+offset_right = 1071.0
+offset_bottom = 715.0
 theme = SubResource("Theme_rcvmw")
 theme_override_fonts/font = ExtResource("17_rcvmw")
 theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_q684h")
 horizontal_alignment = 1
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
