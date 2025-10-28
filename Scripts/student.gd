@@ -3,13 +3,17 @@ class_name Student extends Resource
 var first_name: String
 var last_name: String
 var grade: int
+var phase_durations: Array[int]
 var performance_history: Array
+var code_history: Array[Global.CodeAction]
 
 func _init(f_name: String, l_name: String, s_grade: int) -> void:
 	self.first_name = f_name
 	self.last_name = l_name
 	self.grade = s_grade
+	self.phase_durations = [0, 0, 0, 0]
 	self.performance_history = []
+	self.code_history = []
 
 func get_data() -> Array:
 	var data = [

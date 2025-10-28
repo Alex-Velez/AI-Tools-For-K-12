@@ -7,6 +7,8 @@ func _ready() -> void:
 	button_down.connect(_on_button_down)
 	button_up.connect(_on_button_up)
 	self.text = Global.CodeAction.keys()[action_type]
+	if self.action_type in [Global.CodeAction.IsObstacleFront, Global.CodeAction.IsObstacleRight, Global.CodeAction.IsObstacleLeft, Global.CodeAction.IsSpaceTravelledFront, Global.CodeAction.IsSpaceTravelledRight, Global.CodeAction.IsSpaceTravelledLeft]:
+		self.modulate = Color.PINK
 
 func _on_button_down():
 	Global.is_dragging = true

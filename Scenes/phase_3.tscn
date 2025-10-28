@@ -1,15 +1,11 @@
-[gd_scene load_steps=9 format=4 uid="uid://bg0dld4asbh6g"]
+[gd_scene load_steps=7 format=4 uid="uid://bg0dld4asbh6g"]
 
 [ext_resource type="PackedScene" uid="uid://gmeoe7uq2h4l" path="res://Scenes/code_block_2.tscn" id="1_5xuyg"]
 [ext_resource type="Script" uid="uid://dq8sf47myldlp" path="res://Scripts/phase_3.gd" id="1_bsygr"]
 [ext_resource type="Theme" uid="uid://b5fspwopkw78g" path="res://Themes/MarginTheme.tres" id="1_rvyeb"]
-[ext_resource type="Texture2D" uid="uid://db7p5lde12lqi" path="res://icon.svg" id="3_54a6q"]
+[ext_resource type="PackedScene" uid="uid://cj1s32in6tw1k" path="res://Scenes/robot.tscn" id="3_54a6q"]
 [ext_resource type="TileSet" uid="uid://cr61rcvxrur8h" path="res://TileSets/Room1TileSet.res" id="3_bsygr"]
-[ext_resource type="Script" uid="uid://xdcqf1dl3tvr" path="res://Scripts/robot.gd" id="4_blned"]
 [ext_resource type="PackedScene" uid="uid://bofbrpbd4rj4n" path="res://Scenes/drop_slot_2.tscn" id="5_54a6q"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_54a6q"]
-size = Vector2(16, 16)
 
 [node name="Phase3" type="Control"]
 layout_mode = 3
@@ -48,55 +44,28 @@ touch_dragger_enabled = true
 [node name="LeftPanel" type="Panel" parent="VSplitContainer/TopPanel/HSplitContainer"]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VSplitContainer/TopPanel/HSplitContainer/LeftPanel"]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="VSplitContainer/TopPanel/HSplitContainer/LeftPanel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_rvyeb")
-
-[node name="SubViewportContainer" type="SubViewportContainer" parent="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/HBoxContainer"]
-layout_mode = 2
 size_flags_horizontal = 3
 stretch = true
 stretch_shrink = 6
 
-[node name="SubViewport" type="SubViewport" parent="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/HBoxContainer/SubViewportContainer"]
+[node name="SubViewport" type="SubViewport" parent="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/SubViewportContainer"]
 handle_input_locally = false
-size = Vector2i(110, 133)
+size = Vector2i(221, 133)
 render_target_update_mode = 4
 
-[node name="TileMapLayer" type="TileMapLayer" parent="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/HBoxContainer/SubViewportContainer/SubViewport"]
-tile_map_data = PackedByteArray("AAAGAAIAAQAAAAsAAAAGAAQAAQAAAAsAAAAGAAUAAQAAAAsAAAAGAAYAAQAAAAsAAAAGAAcAAQAAAAsAAAAFAAcAAQAAAAsAAAAEAAcAAQAAAAsAAAADAAcAAQAAAAsAAAACAAcAAQAAAAsAAAABAAcAAQAAAAsAAAAAAAcAAQAAAAsAAAAGAAMAAQAAAAsAAAAGAAEAAQAAAAsAAAAGAAAAAQAAAAsAAAAEAAMAAQAAAAsAAAAEAAQAAQAAAAsAAAADAAQAAQAAAAsAAAACAAQAAQAAAAsAAAABAAQAAQAAAAsAAAADAAIAAQAAAAsAAAADAAMAAQAAAAsAAAA=")
+[node name="TileMapLayer" type="TileMapLayer" parent="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/SubViewportContainer/SubViewport"]
+tile_map_data = PackedByteArray("AAAGAAcAAQAAAAsAAAAEAAcAAQAAAAsAAAADAAcAAQAAAAsAAAACAAcAAQAAAAsAAAABAAcAAQAAAAsAAAAAAAcAAQAAAAsAAAAFAAcAAQAAAAsAAAAHAAcAAQAAAAsAAAAIAAcAAQAAAAsAAAAJAAcAAQAAAAsAAAAKAAcAAQAAAAsAAAALAAcAAQAAAAsAAAAMAAcAAQAAAAsAAAANAAcAAQAAAAsAAAANAAYAAQAAAAsAAAANAAUAAQAAAAsAAAANAAQAAQAAAAsAAAANAAMAAQAAAAsAAAANAAIAAQAAAAsAAAANAAEAAQAAAAsAAAANAAAAAQAAAAsAAAAMAAAAAQAAAAsAAAALAAAAAQAAAAsAAAAKAAAAAQAAAAsAAAAJAAAAAQAAAAsAAAAIAAAAAQAAAAsAAAAHAAAAAQAAAAsAAAAGAAAAAQAAAAsAAAAFAAAAAQAAAAsAAAAEAAAAAQAAAAsAAAADAAAAAQAAAAsAAAACAAAAAQAAAAsAAAAAAAIAAQAAAAsAAAAAAAEAAQAAAAsAAAAAAAMAAQAAAAsAAAAAAAQAAQAAAAsAAAAAAAUAAQAAAAsAAAAAAAYAAQAAAAsAAAAAAAAAAQAAAAsAAAABAAAAAQAAAAsAAAAMAAUAAQAAAAsAAAAKAAUAAQAAAAsAAAAKAAMAAQAAAAsAAAAMAAEAAQAAAAsAAAAKAAEAAQAAAAsAAAAMAAMAAQAAAAsAAAAEAAEAAQAAAAsAAAABAAUAAQAAAAsAAAACAAYAAQAAAAsAAAABAAYAAQAAAAsAAAAIAAUAAQAAAAsAAAAIAAMAAQAAAAsAAAAIAAEAAQAAAAsAAAAFAAIAAQAAAAsAAAAFAAEAAQAAAAsAAAAGAAEAAQAAAAsAAAA=")
 tile_set = ExtResource("3_bsygr")
 
-[node name="Robot" type="CharacterBody2D" parent="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/HBoxContainer/SubViewportContainer/SubViewport"]
-position = Vector2(7.785, 7.83)
-script = ExtResource("4_blned")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/HBoxContainer/SubViewportContainer/SubViewport/Robot"]
-shape = SubResource("RectangleShape2D_54a6q")
-metadata/_edit_lock_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/HBoxContainer/SubViewportContainer/SubViewport/Robot"]
-position = Vector2(0.25000003, 0)
-scale = Vector2(0.12890626, 0.12500001)
-texture = ExtResource("3_54a6q")
-metadata/_edit_lock_ = true
-
-[node name="SubViewportContainer2" type="SubViewportContainer" parent="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-stretch = true
-
-[node name="SubViewport" type="SubViewport" parent="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/HBoxContainer/SubViewportContainer2"]
-handle_input_locally = false
-size = Vector2i(663, 800)
-render_target_update_mode = 4
-
-[node name="TileMapLayer" type="TileMapLayer" parent="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/HBoxContainer/SubViewportContainer2/SubViewport"]
+[node name="Robot" parent="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/SubViewportContainer/SubViewport" instance=ExtResource("3_54a6q")]
+position = Vector2(23.666668, 24.833334)
 
 [node name="RightPanel" type="Panel" parent="VSplitContainer/TopPanel/HSplitContainer"]
 clip_contents = true
@@ -124,35 +93,35 @@ layout_mode = 2
 
 [node name="DropSlot" parent="VSplitContainer/TopPanel/HSplitContainer/RightPanel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("5_54a6q")]
 layout_mode = 2
-text = "EMPTY"
+text = " "
 
 [node name="DropSlot2" parent="VSplitContainer/TopPanel/HSplitContainer/RightPanel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("5_54a6q")]
 layout_mode = 2
-text = "EMPTY"
+text = " "
 
 [node name="DropSlot3" parent="VSplitContainer/TopPanel/HSplitContainer/RightPanel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("5_54a6q")]
 layout_mode = 2
-text = "EMPTY"
+text = " "
 
 [node name="DropSlot4" parent="VSplitContainer/TopPanel/HSplitContainer/RightPanel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("5_54a6q")]
 layout_mode = 2
-text = "EMPTY"
+text = " "
 
 [node name="DropSlot5" parent="VSplitContainer/TopPanel/HSplitContainer/RightPanel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("5_54a6q")]
 layout_mode = 2
-text = "EMPTY"
+text = " "
 
 [node name="DropSlot6" parent="VSplitContainer/TopPanel/HSplitContainer/RightPanel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("5_54a6q")]
 layout_mode = 2
-text = "EMPTY"
+text = " "
 
 [node name="DropSlot7" parent="VSplitContainer/TopPanel/HSplitContainer/RightPanel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("5_54a6q")]
 layout_mode = 2
-text = "EMPTY"
+text = " "
 
 [node name="DropSlot8" parent="VSplitContainer/TopPanel/HSplitContainer/RightPanel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("5_54a6q")]
 layout_mode = 2
-text = "EMPTY"
+text = " "
 
 [node name="MarginContainer" type="MarginContainer" parent="VSplitContainer/TopPanel/HSplitContainer/RightPanel/VBoxContainer"]
 layout_mode = 2
@@ -166,7 +135,12 @@ layout_mode = 2
 [node name="PlayButton" type="Button" parent="VSplitContainer/TopPanel/HSplitContainer/RightPanel/VBoxContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+toggle_mode = true
 text = "Play"
+
+[node name="Timer" type="Timer" parent="VSplitContainer/TopPanel/HSplitContainer/RightPanel/VBoxContainer/MarginContainer/HBoxContainer/PlayButton"]
+wait_time = 0.025
+autostart = true
 
 [node name="FastButton" type="Button" parent="VSplitContainer/TopPanel/HSplitContainer/RightPanel/VBoxContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
@@ -272,4 +246,12 @@ keep_pressed_outside = true
 text = "CODEBLOCK"
 action_type = 13
 
-[connection signal="pressed" from="VSplitContainer/TopPanel/HSplitContainer/RightPanel/VBoxContainer/MarginContainer/HBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[node name="AcceptDialog" type="AcceptDialog" parent="."]
+oversampling_override = 1.0
+title = "RowdyRobo"
+position = Vector2i(900, 761)
+size = Vector2i(355, 185)
+dialog_text = "HELLO IM HERE TO HELP"
+
+[connection signal="toggled" from="VSplitContainer/TopPanel/HSplitContainer/RightPanel/VBoxContainer/MarginContainer/HBoxContainer/PlayButton" to="." method="_on_play_button_toggled"]
+[connection signal="timeout" from="VSplitContainer/TopPanel/HSplitContainer/RightPanel/VBoxContainer/MarginContainer/HBoxContainer/PlayButton/Timer" to="." method="_on_code_timer_timeout"]
