@@ -9,10 +9,12 @@ var runtime: float = 0
 var user_code: Array[Global.CodeAction] = []
 var running = false
 var code_index = 0
-
+#
 func _process(delta: float) -> void:
 	runtime += delta
-
+	#DialogueManager.show_dialogue_balloon(load("res://Scripts/testDialog.dialogue"))
+	#return
+#
 func _on_play_button_toggled(toggled_on: bool) -> void:
 	running = toggled_on
 	if toggled_on:

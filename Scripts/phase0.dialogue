@@ -1,0 +1,17 @@
+~ phase_0
+RowdyRobo: Hi there, {{Global.current_student.first_name}} I'm RowdyRobo, your coding buddy! Welcome to my world! Let's work together to learn some algorithms [wait=1](and clean up a little, while we are at it) 
+- Next
+RowdyRobo: Algorithms are just a set of instructions to tell me where to go! Algorithms are the [wave] foundation of AI [/wave], helping robots and computers solve problems and make decisions
+- Next
+RowdyRobo: Today, you’ll snap blocks together to make your own algorithm. Put the blocks in order and you’ll teach me how to think and move. 
+- I want to CODE! 
+RowdyRobo: Not so fast, let me go over the instructions. 
+- Ok
+RowdyRobo: You see the blocks at the bottom of the screen? You will drag and drop them into the empty boxes on the right-hand side. [wait=1]. The code will [wave] loop[/wave], so I will follow the instructions from top to bottom, and then start over at the top. 
+- That makes sense 
+RowdyRobo: Ready to build? Let’s get coding!
+- I'm ready! => END!
+- I'm not ready! => phase_0
+
+
+=> END
