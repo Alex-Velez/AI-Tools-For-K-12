@@ -21,7 +21,7 @@ func _ready() -> void:
 func _on_dialogue_ended(_resource: DialogueResource) -> void:
 	
 	print(\"Dialogue ended! Changing scene...\")
-	get_tree().change_scene_to_file(\"res://Scenes/phase_0.tscn\")
+	get_tree().change_scene_to_file(\"res://Scenes/phase_0_official.tscn\")
 
 	pass
 	#get_tree().change_scene_to_file(\"res://Scenes/phase_0.tscn\")
