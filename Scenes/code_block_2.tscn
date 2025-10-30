@@ -6,5 +6,5 @@
 [node name="CodeBlock" type="Button"]
 custom_minimum_size = Vector2(200, 50)
 theme = ExtResource("1_yj5yh")
-text = "NORMALCODEBLOCK"
+text = "NORMALCO"
 script = ExtResource("2_bwegr")
