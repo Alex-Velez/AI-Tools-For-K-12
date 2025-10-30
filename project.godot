@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Global="*res://Scripts/global.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
 
 [dialogue_manager]
 
@@ -34,7 +35,7 @@ mouse_cursor/custom_image="uid://c5s4oqq11qohc"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/silent_wolf/plugin.cfg")
 
 [input]
 

@@ -47,4 +47,5 @@ func _on_start_button_pressed() -> void:
 	print("Cached student: first, last, grade")
 	
 	get_tree().change_scene_to_file("res://Scenes/welcome_screen.tscn")
+	#get_tree().change_scene_to_file("res://Scenes/phase_3.tscn")
 	pass

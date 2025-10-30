@@ -27,7 +27,8 @@ func _process(delta: float) -> void:
 		print("Complete")
 		_cache_student_data()
 		Global.save_student_data()
-		get_tree().quit()
+		get_tree().change_scene_to_file("res://Scenes/Leaderboard.tscn")
+		#get_tree().quit()
 
 func _on_play_button_toggled(toggled_on: bool) -> void:
 	running = toggled_on
