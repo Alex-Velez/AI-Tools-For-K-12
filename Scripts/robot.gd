@@ -11,6 +11,7 @@ var direction: Vector2 = Vector2(0, 1)
 var rng = RandomNumberGenerator.new()
 var current_conditional = false
 var conditional_just_played = false
+var travelled_positions = {}
 
 func run_action(action: Global.CodeAction):
 	match action:
@@ -30,14 +31,29 @@ func run_action(action: Global.CodeAction):
 		Global.CodeAction.Turn180:
 			_turn_180()
 		Global.CodeAction.TurnRandom:
-			for i in range(rng.randi_range(0, 3)):
-				_turn_right()
+			match rng.randi_range(0, 2):
+				0: _turn_right()
+				1: _turn_left()
+				2: _turn_180()
 		Global.CodeAction.IsObstacleFront:
 			_is_obstacle_front()
 		Global.CodeAction.IsObstacleRight:
 			_is_obstacle_right()
 		Global.CodeAction.IsObstacleLeft:
 			_is_obstacle_left()
+		Global.CodeAction.IsSpaceTravelledFront:
+			_is_travelled_front()
+		Global.CodeAction.IsSpaceTravelledRight:
+			_is_travelled_right()
+		Global.CodeAction.IsSpaceTravelledLeft:
+			_is_travelled_left()
+	
+	# prevent floating point errors
+	self.position = round(self.position)
+	self.direction = round(self.direction)
+	self.rotation_degrees = round(self.rotation_degrees)
+	
+	travelled_positions[self.position] = true
 
 func _reset_conditional():
 	self.current_conditional = false
@@ -65,16 +81,16 @@ func _turn_right():
 	if self.conditional_just_played and !self.current_conditional:
 		_reset_conditional()
 		return
-	self.direction = self.direction.rotated(deg_to_rad(-90))
-	self.rotate(deg_to_rad(-90))
+	self.direction = self.direction.rotated(deg_to_rad(90))
+	self.rotate(deg_to_rad(90))
 	_reset_conditional()
 
 func _turn_left():
 	if self.conditional_just_played and !self.current_conditional:
 		_reset_conditional()
 		return
-	self.direction = self.direction.rotated(deg_to_rad(90))
-	self.rotate(deg_to_rad(90))
+	self.direction = self.direction.rotated(deg_to_rad(-90))
+	self.rotate(deg_to_rad(-90))
 	_reset_conditional()
 
 func _turn_180():
@@ -99,4 +115,19 @@ func _is_obstacle_right():
 
 func _is_obstacle_left():
 	current_conditional = ray_left.is_colliding()
+	self.conditional_just_played = true
+
+func _is_travelled_front():
+	var global_target_pos = self.position + ray_forward.target_position
+	current_conditional = travelled_positions.has(global_target_pos)
+	self.conditional_just_played = true
+
+func _is_travelled_right():
+	var global_target_pos = self.position + ray_right.target_position
+	current_conditional = travelled_positions.has(global_target_pos)
+	self.conditional_just_played = true
+
+func _is_travelled_left():
+	var global_target_pos = self.position + ray_left.target_position
+	current_conditional = travelled_positions.has(global_target_pos)
 	self.conditional_just_played = true

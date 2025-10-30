@@ -17,7 +17,6 @@ func _process(_delta: float) -> void:
 			Global.holding_action = Global.CodeAction.NULL
 			self.text = Global.CodeAction.keys()[self.assigned_action]
 
-
 func _on_mouse_entered():
 	self.is_hovering = true
 
