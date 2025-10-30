@@ -27,7 +27,8 @@ func _process(delta: float) -> void:
 		print("Complete")
 		_cache_student_data()
 		Global.save_student_data()
-		get_tree().quit()
+		get_tree().change_scene_to_file("res://Scenes/Leaderboard.tscn")
+		#get_tree().quit()
 
 func _on_play_button_toggled(toggled_on: bool) -> void:
 	running = toggled_on
@@ -69,3 +70,9 @@ func _cache_student_data():
 	Global.current_student.performance_history.append(progress_bar.ratio)
 	Global.current_student.code_history["phase3"] = user_code
 	print("Cached student: phasedur, perfhist, codehist")
+	
+	Global.score = progress_bar.ratio
+	var sw_result : Dictionary = await SilentWolf.Scores.save_score(Global.current_student.first_name, Global.score).sw_save_score_complete
+	print("Score persisted successfully: " + str(sw_result.score_id))
+	
+	
