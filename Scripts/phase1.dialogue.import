@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dmslontbikoji"
+path="res://.godot/imported/phase1.dialogue-a4137c27f63cc1758aea9836350603bf.tres"
+
+[deps]
+
+source_file="res://Scripts/phase1.dialogue"
+dest_files=["res://.godot/imported/phase1.dialogue-a4137c27f63cc1758aea9836350603bf.tres"]
+
+[params]
+
+defaults=true
