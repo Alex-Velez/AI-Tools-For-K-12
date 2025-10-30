@@ -27,8 +27,7 @@ func _process(delta: float) -> void:
 		print("Complete")
 		_cache_student_data()
 		Global.save_student_data()
-		get_tree().change_scene_to_file("res://Scenes/Leaderboard.tscn")
-		#get_tree().quit()
+		get_tree().change_scene_to_file("res://Scenes/phase_1_intro.tscn")
 
 func _on_play_button_toggled(toggled_on: bool) -> void:
 	running = toggled_on
@@ -64,9 +63,8 @@ func _cache_student_data():
 		return
 	Global.current_student.phase_durations.append(runtime)
 	Global.current_student.performance_history.append(progress_bar.ratio)
-	Global.current_student.code_history["phase3"] = user_code
-	print("Cached student: phasedur, perfhist, codehist")
-
+	Global.current_student.code_history["phase0"] = user_code
+	print("Phase 0: Cached student: phasedur, perfhist, codehist")
 
 func _on_speed_button_toggled(toggled_on: bool) -> void:
 	if toggled_on:

@@ -1,47 +1,47 @@
-[gd_scene load_steps=16 format=4 uid="uid://bg0dld4asbh6g"]
+[gd_scene load_steps=16 format=4 uid="uid://couy16iq3l4pp"]
 
-[ext_resource type="PackedScene" uid="uid://gmeoe7uq2h4l" path="res://Scenes/code_block_2.tscn" id="1_5xuyg"]
-[ext_resource type="Script" uid="uid://dq8sf47myldlp" path="res://Scripts/phase_3.gd" id="1_bsygr"]
-[ext_resource type="Theme" uid="uid://b5fspwopkw78g" path="res://Themes/MarginTheme.tres" id="1_rvyeb"]
-[ext_resource type="PackedScene" uid="uid://cj1s32in6tw1k" path="res://Scenes/robot.tscn" id="3_54a6q"]
-[ext_resource type="TileSet" uid="uid://cr61rcvxrur8h" path="res://TileSets/Room1TileSet.res" id="3_bsygr"]
-[ext_resource type="PackedScene" uid="uid://cp52gaebpptxg" path="res://Scenes/trash.tscn" id="4_ners4"]
-[ext_resource type="PackedScene" uid="uid://bofbrpbd4rj4n" path="res://Scenes/drop_slot_2.tscn" id="5_54a6q"]
-[ext_resource type="Texture2D" uid="uid://651vug45u1sy" path="res://Sprites/YellowPlaid.jpg" id="5_okq8o"]
-[ext_resource type="Texture2D" uid="uid://bxkguh4ptib6x" path="res://Sprites/ButtonUI.png" id="8_34bdi"]
+[ext_resource type="Script" uid="uid://dur0qidc1u7cn" path="res://Scripts/phase_0.gd" id="1_s8djo"]
+[ext_resource type="TileSet" uid="uid://cr61rcvxrur8h" path="res://TileSets/Room1TileSet.res" id="2_mrxjg"]
+[ext_resource type="PackedScene" uid="uid://cj1s32in6tw1k" path="res://Scenes/robot.tscn" id="3_lmucv"]
+[ext_resource type="PackedScene" uid="uid://cp52gaebpptxg" path="res://Scenes/trash.tscn" id="4_2m5nj"]
+[ext_resource type="Texture2D" uid="uid://651vug45u1sy" path="res://Sprites/YellowPlaid.jpg" id="5_bqnxf"]
+[ext_resource type="Theme" uid="uid://b5fspwopkw78g" path="res://Themes/MarginTheme.tres" id="6_auunl"]
+[ext_resource type="PackedScene" uid="uid://bofbrpbd4rj4n" path="res://Scenes/drop_slot_2.tscn" id="7_58sbv"]
+[ext_resource type="Texture2D" uid="uid://bxkguh4ptib6x" path="res://Sprites/ButtonUI.png" id="8_k18m5"]
+[ext_resource type="PackedScene" uid="uid://gmeoe7uq2h4l" path="res://Scenes/code_block_2.tscn" id="9_ayl1w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_34bdi"]
-atlas = ExtResource("8_34bdi")
+atlas = ExtResource("8_k18m5")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0svdb"]
-atlas = ExtResource("8_34bdi")
+atlas = ExtResource("8_k18m5")
 region = Rect2(80, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jfvo1"]
-atlas = ExtResource("8_34bdi")
+atlas = ExtResource("8_k18m5")
 region = Rect2(0, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mqydb"]
-atlas = ExtResource("8_34bdi")
+atlas = ExtResource("8_k18m5")
 region = Rect2(96, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_okq8o"]
-atlas = ExtResource("8_34bdi")
+atlas = ExtResource("8_k18m5")
 region = Rect2(80, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kp3kk"]
-atlas = ExtResource("8_34bdi")
+atlas = ExtResource("8_k18m5")
 region = Rect2(64, 64, 16, 16)
 
-[node name="Phase3" type="Control"]
+[node name="Phase0" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_bsygr")
+script = ExtResource("1_s8djo")
 
 [node name="VSplitContainer" type="VSplitContainer" parent="."]
 layout_mode = 1
@@ -92,50 +92,50 @@ size = Vector2i(221, 128)
 render_target_update_mode = 4
 
 [node name="TileMapLayer" type="TileMapLayer" parent="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/VBoxContainer/SubViewportContainer/SubViewport"]
-tile_map_data = PackedByteArray("AAAGAAcAAQAAAAsAAAAEAAcAAQAAAAsAAAADAAcAAQAAAAsAAAACAAcAAQAAAAsAAAABAAcAAQAAAAsAAAAAAAcAAQAAAAsAAAAFAAcAAQAAAAsAAAAHAAcAAQAAAAsAAAAIAAcAAQAAAAsAAAAJAAcAAQAAAAsAAAAKAAcAAQAAAAsAAAALAAcAAQAAAAsAAAAMAAcAAQAAAAsAAAANAAcAAQAAAAsAAAANAAYAAQAAAAsAAAANAAUAAQAAAAsAAAANAAQAAQAAAAsAAAANAAMAAQAAAAsAAAANAAIAAQAAAAsAAAANAAEAAQAAAAsAAAANAAAAAQAAAAsAAAAMAAAAAQAAAAsAAAALAAAAAQAAAAsAAAAKAAAAAQAAAAsAAAAJAAAAAQAAAAsAAAAIAAAAAQAAAAsAAAAHAAAAAQAAAAsAAAAGAAAAAQAAAAsAAAAFAAAAAQAAAAsAAAAEAAAAAQAAAAsAAAADAAAAAQAAAAsAAAACAAAAAQAAAAsAAAAAAAIAAQAAAAsAAAAAAAEAAQAAAAsAAAAAAAMAAQAAAAsAAAAAAAQAAQAAAAsAAAAAAAUAAQAAAAsAAAAAAAYAAQAAAAsAAAAAAAAAAQAAAAsAAAABAAAAAQAAAAsAAAAMAAUAAQAAAAsAAAAKAAUAAQAAAAsAAAAKAAMAAQAAAAsAAAAMAAEAAQAAAAsAAAAKAAEAAQAAAAsAAAAMAAMAAQAAAAsAAAAEAAEAAQAAAAsAAAABAAUAAQAAAAsAAAACAAYAAQAAAAsAAAABAAYAAQAAAAsAAAAIAAUAAQAAAAsAAAAIAAMAAQAAAAsAAAAIAAEAAQAAAAsAAAAFAAIAAQAAAAsAAAAFAAEAAQAAAAsAAAAGAAEAAQAAAAsAAAABAAQAAQAFAAoAAAABAAMAAQAFAAoAAAABAAIAAQAFAAoAAAABAAEAAQAFAAoAAAACAAEAAQAFAAoAAAADAAEAAQAFAAoAAAADAAIAAQAFAAoAAAACAAIAAQAFAAoAAAACAAMAAQAFAAoAAAACAAQAAQAFAAoAAAACAAUAAQAFAAoAAAADAAUAAQAFAAoAAAADAAQAAQAFAAoAAAADAAMAAQAFAAoAAAAEAAMAAQAFAAoAAAAEAAIAAQAFAAoAAAAEAAQAAQAFAAoAAAADAAYAAQAFAAoAAAAEAAYAAQAFAAoAAAAEAAUAAQAFAAoAAAAFAAYAAQAFAAoAAAAGAAYAAQAFAAoAAAAHAAYAAQAFAAoAAAAIAAYAAQAFAAoAAAAJAAYAAQAFAAoAAAAKAAYAAQAFAAoAAAALAAYAAQAFAAoAAAAMAAYAAQAFAAoAAAALAAUAAQAFAAoAAAALAAQAAQAFAAoAAAAMAAQAAQAFAAoAAAAKAAQAAQAFAAoAAAALAAMAAQAFAAoAAAALAAIAAQAFAAoAAAALAAEAAQAFAAoAAAAMAAIAAQAFAAoAAAAKAAIAAQAFAAoAAAAJAAIAAQAFAAoAAAAJAAEAAQAFAAoAAAAJAAMAAQAFAAoAAAAJAAQAAQAFAAoAAAAJAAUAAQAFAAoAAAAIAAQAAQAFAAoAAAAHAAQAAQAFAAoAAAAHAAUAAQAFAAoAAAAGAAUAAQAFAAoAAAAFAAUAAQAFAAoAAAAFAAQAAQAFAAoAAAAFAAMAAQAFAAoAAAAGAAQAAQAFAAoAAAAGAAMAAQAFAAoAAAAGAAIAAQAFAAoAAAAHAAIAAQAFAAoAAAAHAAMAAQAFAAoAAAAHAAEAAQAFAAoAAAAIAAIAAQAFAAoAAAA=")
-tile_set = ExtResource("3_bsygr")
+tile_map_data = PackedByteArray("AAAGAAcAAQAHAAsAAAAEAAcAAQAHAAsAAAADAAcAAQAHAAsAAAAFAAcAAQAHAAsAAAAHAAcAAQAHAAsAAAANAAYAAQAHAAsAAFANAAUAAQAHAAsAAFANAAQAAQAHAAsAAFANAAMAAQAHAAsAAFANAAIAAQAHAAsAAFANAAEAAQAHAAsAAFANAAAAAQAHAAsAAFAMAAAAAQAHAAsAAAALAAAAAQAHAAsAAAAKAAAAAQAHAAsAAAAJAAAAAQAHAAsAAAAIAAAAAQAHAAsAAAAHAAAAAQAHAAsAAAAGAAAAAQAHAAsAAAAFAAAAAQAHAAsAAAAEAAAAAQAHAAsAAAADAAAAAQAHAAsAAAACAAAAAQAHAAsAAAAAAAIAAQAHAAsAAGAAAAEAAQAHAAsAAGAAAAMAAQAHAAsAAGAAAAQAAQAHAAsAAGAAAAUAAQAHAAsAAGAAAAYAAQAHAAsAAGAAAAAAAQAHAAsAAGABAAAAAQAIAAsAAAACAAMAAQADAAwAAAABAAMAAQADAAMAAAADAAMAAQAXAAsAAAAEAAMAAQATAA8AAAAFAAMAAQATAA8AAAAGAAMAAQATAA8AAAAHAAMAAQATAA8AAAAIAAMAAQATAA8AAAAJAAMAAQATAA8AAAAKAAMAAQATAA8AAAALAAMAAQATAA8AAAAMAAMAAQAOAAwAAAABAAQAAQADAAMAAAACAAQAAQADAAwAAAADAAQAAQAXAAsAAAAEAAQAAQATAA8AAAAFAAQAAQATAA8AAAAGAAQAAQATAA8AAAAHAAQAAQATAA8AAAAIAAQAAQATAA8AAAAJAAQAAQATAA8AAAAKAAQAAQATAA8AAAALAAQAAQATAA8AAAAMAAQAAQAOAAwAAAAMAAUAAQAOAAwAAAALAAUAAQADAAwAAAAKAAUAAQADAAwAAAAJAAUAAQADAAwAAAAIAAUAAQADAAwAAAAHAAUAAQADAAwAAAAGAAUAAQADAAwAAAAFAAUAAQADAAwAAAAEAAUAAQADAAwAAAADAAUAAQAXAAsAAAACAAUAAQADAAwAAAABAAUAAQADAAMAAAABAAYAAQADAAMAAAACAAYAAQADAAwAAAADAAYAAQAXAAsAAAAEAAYAAQAXAAsAAAAFAAYAAQAXAAsAAAAGAAYAAQAXAAsAAAAHAAYAAQAXAAsAAAAIAAYAAQAXAAsAAAAJAAYAAQAXAAsAAAAMAAYAAQAOAAwAAAALAAYAAQAXAAsAAAAKAAYAAQAXAAsAAAAMAAIAAQAOAAwAAAAMAAEAAQAOAAwAAAALAAEAAQAXAAsAAAAKAAEAAQAXAAsAAAAJAAEAAQAXAAsAAAAIAAEAAQAXAAsAAAAHAAEAAQAXAAsAAAAGAAEAAQAXAAsAAAAFAAEAAQAXAAsAAAAEAAEAAQAXAAsAAAADAAEAAQAXAAsAAAACAAEAAQADAAwAAAABAAEAAQADAAMAAAABAAIAAQADAAMAAAACAAIAAQADAAwAAAADAAIAAQAXAAsAAAAEAAIAAQADAAwAAAAFAAIAAQADAAwAAAAGAAIAAQADAAwAAAAHAAIAAQADAAwAAAAIAAIAAQADAAwAAAAJAAIAAQADAAwAAAAKAAIAAQADAAwAAAALAAIAAQADAAwAAAANAAcAAQAHAAsAAAAMAAcAAQAHAAsAAAALAAcAAQAHAAsAAAAKAAcAAQAHAAsAAAAJAAcAAQAHAAsAAAAIAAcAAQAHAAsAAAAAAAcAAQAHAAsAAAABAAcAAQAHAAsAAAACAAcAAQAHAAsAAAA=")
+tile_set = ExtResource("2_mrxjg")
 
-[node name="Robot" parent="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/VBoxContainer/SubViewportContainer/SubViewport" instance=ExtResource("3_54a6q")]
+[node name="Robot" parent="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/VBoxContainer/SubViewportContainer/SubViewport" instance=ExtResource("3_lmucv")]
 position = Vector2(24, 24)
 
-[node name="Trash" parent="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/VBoxContainer/SubViewportContainer/SubViewport" instance=ExtResource("4_ners4")]
+[node name="Trash" parent="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/VBoxContainer/SubViewportContainer/SubViewport" instance=ExtResource("4_2m5nj")]
 position = Vector2(24, 72)
 
-[node name="Trash2" parent="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/VBoxContainer/SubViewportContainer/SubViewport" instance=ExtResource("4_ners4")]
-position = Vector2(72, 40)
+[node name="Trash2" parent="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/VBoxContainer/SubViewportContainer/SubViewport" instance=ExtResource("4_2m5nj")]
+position = Vector2(152, 24)
 
-[node name="Trash3" parent="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/VBoxContainer/SubViewportContainer/SubViewport" instance=ExtResource("4_ners4")]
-position = Vector2(120, 24)
+[node name="Trash3" parent="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/VBoxContainer/SubViewportContainer/SubViewport" instance=ExtResource("4_2m5nj")]
+position = Vector2(104, 24)
 
-[node name="Trash4" parent="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/VBoxContainer/SubViewportContainer/SubViewport" instance=ExtResource("4_ners4")]
-position = Vector2(200, 40)
+[node name="Trash4" parent="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/VBoxContainer/SubViewportContainer/SubViewport" instance=ExtResource("4_2m5nj")]
+position = Vector2(24, 40)
 
-[node name="Trash5" parent="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/VBoxContainer/SubViewportContainer/SubViewport" instance=ExtResource("4_ners4")]
+[node name="Trash5" parent="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/VBoxContainer/SubViewportContainer/SubViewport" instance=ExtResource("4_2m5nj")]
 position = Vector2(184, 24)
 
-[node name="Trash6" parent="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/VBoxContainer/SubViewportContainer/SubViewport" instance=ExtResource("4_ners4")]
-position = Vector2(184, 72)
+[node name="Trash6" parent="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/VBoxContainer/SubViewportContainer/SubViewport" instance=ExtResource("4_2m5nj")]
+position = Vector2(24, 104)
 
-[node name="Trash7" parent="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/VBoxContainer/SubViewportContainer/SubViewport" instance=ExtResource("4_ners4")]
+[node name="Trash7" parent="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/VBoxContainer/SubViewportContainer/SubViewport" instance=ExtResource("4_2m5nj")]
 position = Vector2(152, 104)
 
-[node name="Trash8" parent="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/VBoxContainer/SubViewportContainer/SubViewport" instance=ExtResource("4_ners4")]
-position = Vector2(136, 72)
+[node name="Trash8" parent="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/VBoxContainer/SubViewportContainer/SubViewport" instance=ExtResource("4_2m5nj")]
+position = Vector2(120, 104)
 
-[node name="Trash9" parent="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/VBoxContainer/SubViewportContainer/SubViewport" instance=ExtResource("4_ners4")]
-position = Vector2(88, 72)
+[node name="Trash9" parent="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/VBoxContainer/SubViewportContainer/SubViewport" instance=ExtResource("4_2m5nj")]
+position = Vector2(56, 104)
 
-[node name="Trash10" parent="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/VBoxContainer/SubViewportContainer/SubViewport" instance=ExtResource("4_ners4")]
-position = Vector2(104, 56)
+[node name="Trash10" parent="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/VBoxContainer/SubViewportContainer/SubViewport" instance=ExtResource("4_2m5nj")]
+position = Vector2(184, 104)
 
-[node name="Trash11" parent="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/VBoxContainer/SubViewportContainer/SubViewport" instance=ExtResource("4_ners4")]
-position = Vector2(56, 88)
+[node name="Trash11" parent="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/VBoxContainer/SubViewportContainer/SubViewport" instance=ExtResource("4_2m5nj")]
+position = Vector2(56, 56)
 
-[node name="Trash12" parent="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/VBoxContainer/SubViewportContainer/SubViewport" instance=ExtResource("4_ners4")]
+[node name="Trash12" parent="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/VBoxContainer/SubViewportContainer/SubViewport" instance=ExtResource("4_2m5nj")]
 position = Vector2(88, 104)
 
-[node name="Trash13" parent="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/VBoxContainer/SubViewportContainer/SubViewport" instance=ExtResource("4_ners4")]
-position = Vector2(40, 40)
+[node name="Trash13" parent="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/VBoxContainer/SubViewportContainer/SubViewport" instance=ExtResource("4_2m5nj")]
+position = Vector2(56, 24)
 
 [node name="ProgressBar" type="ProgressBar" parent="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/VBoxContainer"]
 layout_mode = 2
@@ -153,7 +153,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("5_okq8o")
+texture = ExtResource("5_bqnxf")
 expand_mode = 1
 stretch_mode = 1
 
@@ -172,43 +172,43 @@ size_flags_vertical = 3
 [node name="MarginContainer" type="MarginContainer" parent="VSplitContainer/TopPanel/HSplitContainer/RightPanel/VBoxContainer/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme = ExtResource("1_rvyeb")
+theme = ExtResource("6_auunl")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VSplitContainer/TopPanel/HSplitContainer/RightPanel/VBoxContainer/ScrollContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="DropSlot" parent="VSplitContainer/TopPanel/HSplitContainer/RightPanel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("5_54a6q")]
+[node name="DropSlot" parent="VSplitContainer/TopPanel/HSplitContainer/RightPanel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_58sbv")]
 layout_mode = 2
 text = " "
 
-[node name="DropSlot2" parent="VSplitContainer/TopPanel/HSplitContainer/RightPanel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("5_54a6q")]
+[node name="DropSlot2" parent="VSplitContainer/TopPanel/HSplitContainer/RightPanel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_58sbv")]
 layout_mode = 2
 text = " "
 
-[node name="DropSlot3" parent="VSplitContainer/TopPanel/HSplitContainer/RightPanel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("5_54a6q")]
+[node name="DropSlot3" parent="VSplitContainer/TopPanel/HSplitContainer/RightPanel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_58sbv")]
 layout_mode = 2
 text = " "
 
-[node name="DropSlot4" parent="VSplitContainer/TopPanel/HSplitContainer/RightPanel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("5_54a6q")]
+[node name="DropSlot4" parent="VSplitContainer/TopPanel/HSplitContainer/RightPanel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_58sbv")]
 layout_mode = 2
 text = " "
 
-[node name="DropSlot5" parent="VSplitContainer/TopPanel/HSplitContainer/RightPanel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("5_54a6q")]
+[node name="DropSlot5" parent="VSplitContainer/TopPanel/HSplitContainer/RightPanel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_58sbv")]
 layout_mode = 2
 text = " "
 
-[node name="DropSlot6" parent="VSplitContainer/TopPanel/HSplitContainer/RightPanel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("5_54a6q")]
+[node name="DropSlot6" parent="VSplitContainer/TopPanel/HSplitContainer/RightPanel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_58sbv")]
 layout_mode = 2
 text = " "
 
-[node name="DropSlot7" parent="VSplitContainer/TopPanel/HSplitContainer/RightPanel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("5_54a6q")]
+[node name="DropSlot7" parent="VSplitContainer/TopPanel/HSplitContainer/RightPanel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_58sbv")]
 layout_mode = 2
 text = " "
 
 [node name="MarginContainer" type="MarginContainer" parent="VSplitContainer/TopPanel/HSplitContainer/RightPanel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme = ExtResource("1_rvyeb")
+theme = ExtResource("6_auunl")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VSplitContainer/TopPanel/HSplitContainer/RightPanel/VBoxContainer/MarginContainer"]
 custom_minimum_size = Vector2(0, 50)
@@ -255,84 +255,84 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
-theme = ExtResource("1_rvyeb")
+theme = ExtResource("6_auunl")
 
 [node name="HFlowContainer" type="HFlowContainer" parent="VSplitContainer/BottomPanel/MarginContainer"]
 layout_mode = 2
 
-[node name="CodeBlock" parent="VSplitContainer/BottomPanel/MarginContainer/HFlowContainer" instance=ExtResource("1_5xuyg")]
+[node name="CodeBlock" parent="VSplitContainer/BottomPanel/MarginContainer/HFlowContainer" instance=ExtResource("9_ayl1w")]
 layout_mode = 2
 keep_pressed_outside = true
 text = "CODEBLOCK"
 action_type = 1
 
-[node name="CodeBlock2" parent="VSplitContainer/BottomPanel/MarginContainer/HFlowContainer" instance=ExtResource("1_5xuyg")]
+[node name="CodeBlock2" parent="VSplitContainer/BottomPanel/MarginContainer/HFlowContainer" instance=ExtResource("9_ayl1w")]
 layout_mode = 2
 keep_pressed_outside = true
 text = "CODEBLOCK"
 action_type = 2
 
-[node name="CodeBlock3" parent="VSplitContainer/BottomPanel/MarginContainer/HFlowContainer" instance=ExtResource("1_5xuyg")]
+[node name="CodeBlock3" parent="VSplitContainer/BottomPanel/MarginContainer/HFlowContainer" instance=ExtResource("9_ayl1w")]
 layout_mode = 2
 keep_pressed_outside = true
 text = "CODEBLOCK"
 action_type = 3
 
-[node name="CodeBlock4" parent="VSplitContainer/BottomPanel/MarginContainer/HFlowContainer" instance=ExtResource("1_5xuyg")]
+[node name="CodeBlock4" parent="VSplitContainer/BottomPanel/MarginContainer/HFlowContainer" instance=ExtResource("9_ayl1w")]
 layout_mode = 2
 keep_pressed_outside = true
 text = "CODEBLOCK"
 action_type = 4
 
-[node name="CodeBlock5" parent="VSplitContainer/BottomPanel/MarginContainer/HFlowContainer" instance=ExtResource("1_5xuyg")]
+[node name="CodeBlock5" parent="VSplitContainer/BottomPanel/MarginContainer/HFlowContainer" instance=ExtResource("9_ayl1w")]
 layout_mode = 2
 keep_pressed_outside = true
 text = "CODEBLOCK"
 action_type = 5
 
-[node name="CodeBlock6" parent="VSplitContainer/BottomPanel/MarginContainer/HFlowContainer" instance=ExtResource("1_5xuyg")]
+[node name="CodeBlock6" parent="VSplitContainer/BottomPanel/MarginContainer/HFlowContainer" instance=ExtResource("9_ayl1w")]
 layout_mode = 2
 keep_pressed_outside = true
 text = "CODEBLOCK"
 action_type = 6
 
-[node name="CodeBlock7" parent="VSplitContainer/BottomPanel/MarginContainer/HFlowContainer" instance=ExtResource("1_5xuyg")]
+[node name="CodeBlock7" parent="VSplitContainer/BottomPanel/MarginContainer/HFlowContainer" instance=ExtResource("9_ayl1w")]
 layout_mode = 2
 keep_pressed_outside = true
 text = "CODEBLOCK"
 action_type = 7
 
-[node name="CodeBlock8" parent="VSplitContainer/BottomPanel/MarginContainer/HFlowContainer" instance=ExtResource("1_5xuyg")]
+[node name="CodeBlock8" parent="VSplitContainer/BottomPanel/MarginContainer/HFlowContainer" instance=ExtResource("9_ayl1w")]
 layout_mode = 2
 keep_pressed_outside = true
 text = "CODEBLOCK"
 action_type = 8
 
-[node name="CodeBlock9" parent="VSplitContainer/BottomPanel/MarginContainer/HFlowContainer" instance=ExtResource("1_5xuyg")]
+[node name="CodeBlock9" parent="VSplitContainer/BottomPanel/MarginContainer/HFlowContainer" instance=ExtResource("9_ayl1w")]
 layout_mode = 2
 keep_pressed_outside = true
 text = "CODEBLOCK"
 action_type = 9
 
-[node name="CodeBlock10" parent="VSplitContainer/BottomPanel/MarginContainer/HFlowContainer" instance=ExtResource("1_5xuyg")]
+[node name="CodeBlock10" parent="VSplitContainer/BottomPanel/MarginContainer/HFlowContainer" instance=ExtResource("9_ayl1w")]
 layout_mode = 2
 keep_pressed_outside = true
 text = "CODEBLOCK"
 action_type = 10
 
-[node name="CodeBlock11" parent="VSplitContainer/BottomPanel/MarginContainer/HFlowContainer" instance=ExtResource("1_5xuyg")]
+[node name="CodeBlock11" parent="VSplitContainer/BottomPanel/MarginContainer/HFlowContainer" instance=ExtResource("9_ayl1w")]
 layout_mode = 2
 keep_pressed_outside = true
 text = "CODEBLOCK"
 action_type = 11
 
-[node name="CodeBlock12" parent="VSplitContainer/BottomPanel/MarginContainer/HFlowContainer" instance=ExtResource("1_5xuyg")]
+[node name="CodeBlock12" parent="VSplitContainer/BottomPanel/MarginContainer/HFlowContainer" instance=ExtResource("9_ayl1w")]
 layout_mode = 2
 keep_pressed_outside = true
 text = "CODEBLOCK"
 action_type = 12
 
-[node name="CodeBlock13" parent="VSplitContainer/BottomPanel/MarginContainer/HFlowContainer" instance=ExtResource("1_5xuyg")]
+[node name="CodeBlock13" parent="VSplitContainer/BottomPanel/MarginContainer/HFlowContainer" instance=ExtResource("9_ayl1w")]
 layout_mode = 2
 keep_pressed_outside = true
 text = "CODEBLOCK"
