@@ -1,12 +1,12 @@
-extends CharacterBody2D
+class_name RowdyRobot extends CharacterBody2D
 
 @onready var ray_forward = $ForwardRayCast2D
 @onready var ray_backward = $BackwardRayCast2D
 @onready var ray_right = $RightRayCast2D
 @onready var ray_left = $LeftRayCast2D
+@onready var start_position: Vector2 = self.position
 
 var grid_cell_size = 16
-var grid_position = Vector2(0, 0)
 var direction: Vector2 = Vector2(0, 1)
 var rng = RandomNumberGenerator.new()
 var current_conditional = false
@@ -51,9 +51,17 @@ func run_action(action: Global.CodeAction):
 	# prevent floating point errors
 	self.position = round(self.position)
 	self.direction = round(self.direction)
-	self.rotation_degrees = round(self.rotation_degrees)
+	self.rotation_degrees = float(int(round(self.rotation_degrees)) % 360)
 	
 	travelled_positions[self.position] = true
+
+func reset():
+	self.position = start_position
+	self.direction = Vector2(0.0, 1.0)
+	self.rotation_degrees = 0
+	self.current_conditional = false
+	_reset_conditional()
+	travelled_positions.clear()
 
 func _reset_conditional():
 	self.current_conditional = false
@@ -65,7 +73,6 @@ func _move_forward():
 		return
 	if !ray_forward.is_colliding():
 		self.position += direction * grid_cell_size
-		self.grid_position += direction
 	_reset_conditional()
 
 func _move_backward():
@@ -74,7 +81,6 @@ func _move_backward():
 		return
 	if !ray_backward.is_colliding():
 		self.position -= direction * grid_cell_size
-		self.grid_position -= direction
 	_reset_conditional()
 
 func _turn_right():
