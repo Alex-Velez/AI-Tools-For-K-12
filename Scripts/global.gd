@@ -28,9 +28,10 @@ var score = 0
 
 func _ready():
 	print("Global Autoload ready!")
+	
 	#ADDED FOR LEADERBOARD START
-	SilentWolf.configure({ "api_key": "TblPt5B7K7xhsmuD2FPL6FdzF4mPUJmk551bTf70", "game_id": "RowdyRobo", "log_level": 1 })
-	SilentWolf.configure_scores({"open_scene_on_close": Paths.LEADERBOARD})
+	#SilentWolf.configure({ "api_key": "TblPt5B7K7xhsmuD2FPL6FdzF4mPUJmk551bTf70", "game_id": "RowdyRobo", "log_level": 1 })
+	#SilentWolf.configure_scores({"open_scene_on_close": Paths.LEADERBOARD})
 
 func leaderboard():
 	for score in Global.score: 
