@@ -4,6 +4,7 @@ extends Panel
 @onready var drop_slot_container = $VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer
 @onready var drop_slots: Array = drop_slot_container.get_children()
 @onready var code_timer = $CodeTimer
+@onready var performance_timer = $PerformanceTimer
 
 @export var robot: RowdyRobot
 @export var is_phase_3: bool
@@ -37,6 +38,8 @@ func _on_play_button_toggled(toggled_on: bool) -> void:
 		code_block_index = 0
 		clean_time = 0
 		robot.reset()
+	if performance_timer.is_stopped():
+		performance_timer.start()
 
 func _on_speed_button_toggled(toggled_on: bool) -> void:
 	if toggled_on:
@@ -45,7 +48,8 @@ func _on_speed_button_toggled(toggled_on: bool) -> void:
 		code_timer.wait_time = 0.5
 
 func _on_leader_board_button_pressed() -> void:
-	pass # Replace with function body.
+	Global.save_student_data()
+	#get_tree().change_scene_to_file(Paths.LEADERBOARD)
 
 func _on_exit_button_pressed() -> void:
 	print("Early Exit!")
@@ -61,3 +65,6 @@ func _gather_user_code():
 	for slot in drop_slot_container.get_children():
 		if slot.assigned_action != Global.CodeAction.NULL:
 			user_code.append(slot.assigned_action)
+
+func _on_performance_timer_timeout() -> void:
+	get_tree().change_scene_to_file(Paths.LEADERBOARD2)

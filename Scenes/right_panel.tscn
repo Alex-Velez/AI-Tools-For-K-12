@@ -136,8 +136,13 @@ stretch_mode = 5
 wait_time = 0.5
 autostart = true
 
+[node name="PerformanceTimer" type="Timer" parent="."]
+wait_time = 30.0
+one_shot = true
+
 [connection signal="toggled" from="VBoxContainer/MarginContainer/HBoxContainer/PlayButton" to="." method="_on_play_button_toggled"]
 [connection signal="toggled" from="VBoxContainer/MarginContainer/HBoxContainer/SpeedButton" to="." method="_on_speed_button_toggled"]
 [connection signal="pressed" from="VBoxContainer/MarginContainer/HBoxContainer/LeaderBoardButton" to="." method="_on_leader_board_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/MarginContainer/HBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="timeout" from="CodeTimer" to="." method="_on_code_timer_timeout"]
+[connection signal="timeout" from="PerformanceTimer" to="." method="_on_performance_timer_timeout"]

@@ -17,7 +17,7 @@ func _process(delta: float) -> void:
 		print("Phase3: Complete")
 		Global.cache_student_phase_data("phase3", phase_duration, progress_bar.ratio, right_panel.user_code)
 		Global.save_student_data()
-		get_tree().change_scene_to_file(Paths.LEADERBOARD)
+		get_tree().change_scene_to_file(Paths.LEADERBOARD2)
 		#get_tree().quit()
 
 func _on_trash_body_entered(_body: Node2D) -> void:
