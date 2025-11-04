@@ -1,9 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://bofbrpbd4rj4n"]
-
-[ext_resource type="Script" uid="uid://onkqc1bp22uj" path="res://Scripts/drop_slot.gd" id="1_5cxm5"]
-[ext_resource type="Theme" uid="uid://qsu68in8iols" path="res://Themes/DropSlotTheme.theme" id="1_xvafg"]
-
-[node name="DropSlot2" type="Button"]
-custom_minimum_size = Vector2(0, 50)
-theme = ExtResource("1_xvafg")
-script = ExtResource("1_5cxm5")

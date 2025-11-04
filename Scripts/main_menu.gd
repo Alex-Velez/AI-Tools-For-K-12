@@ -20,7 +20,7 @@ func _on_start_button_pressed() -> void:
 		print("Please only enter last initial")
 		return
 		
-	var grade: int = -1
+	var grade: int
 	match grade_dropdown.selected:
 		1: grade = 5
 		2: grade = 6
@@ -31,8 +31,8 @@ func _on_start_button_pressed() -> void:
 	
 	var new_student = Student.new(first_name, last_name, grade)
 	
-	# check if student alreayd exists
-	var file = FileAccess.open(Global.CSV_PATH, FileAccess.READ)
+	# check if student already exists
+	var file = FileAccess.open(Paths.CSV_PATH, FileAccess.READ)
 	var file_content = file.get_as_text()
 	file.close()
 	
@@ -45,7 +45,4 @@ func _on_start_button_pressed() -> void:
 	
 	Global.current_student = new_student
 	print("Cached student: first, last, grade")
-	
-	get_tree().change_scene_to_file("res://Scenes/welcome_screen.tscn")
-	#get_tree().change_scene_to_file("res://Scenes/phase_3.tscn")
-	pass
+	get_tree().change_scene_to_file(Paths.WELCOME)

@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://v4ktfgxtb1a1"]
+[gd_scene load_steps=10 format=3 uid="uid://v4ktfgxtb1a1"]
 
-[ext_resource type="Script" uid="uid://m8uposd4hvu8" path="res://Scenes/balloon.gd" id="1_36de5"]
+[ext_resource type="Script" uid="uid://m8uposd4hvu8" path="res://Scripts/balloon.gd" id="1_36de5"]
+[ext_resource type="FontFile" uid="uid://5773w4h1ojxq" path="res://Fonts/KGRedHands.ttf" id="2_5iodc"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_72ixx"]
 
@@ -87,6 +88,8 @@ offset_top = -63.0
 offset_bottom = 63.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 400
+theme_override_constants/margin_right = 400
 
 [node name="PanelContainer" type="PanelContainer" parent="Balloon/MarginContainer"]
 clip_children = 2
@@ -104,6 +107,8 @@ unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 2
 mouse_filter = 1
+theme_override_fonts/normal_font = ExtResource("2_5iodc")
+theme_override_font_sizes/normal_font_size = 40
 bbcode_enabled = true
 text = "Character"
 fit_content = true
@@ -113,15 +118,24 @@ scroll_active = false
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("2_5iodc")
+theme_override_font_sizes/normal_font_size = 35
 text = "Dialogue..."
 
 [node name="ResponsesMenu" type="VBoxContainer" parent="Balloon" node_paths=PackedStringArray("response_template")]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 727.0
-offset_top = 665.0
-offset_right = 1308.0
-offset_bottom = 735.0
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -290.5
+offset_top = -280.0
+offset_right = 290.5
+offset_bottom = -209.99988
+grow_horizontal = 2
+grow_vertical = 0
 size_flags_vertical = 8
 theme_override_constants/separation = 2
 alignment = 1
@@ -130,6 +144,9 @@ response_template = NodePath("ResponseExample")
 
 [node name="ResponseExample" type="Button" parent="Balloon/ResponsesMenu"]
 layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_5iodc")
+theme_override_font_sizes/font_size = 30
 text = "Response example"
 
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
