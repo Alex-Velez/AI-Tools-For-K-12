@@ -23,6 +23,10 @@ var holding_code_block = null
 var holding_code_block_offset: Vector2 = Vector2.ZERO
 var holding_action: CodeAction = CodeAction.NULL
 
+var trash_nodes: Array
+var trash_node_count: int = -1
+var trash_collected: int = 0
+
 var student_list = []
 var score = 0
 
@@ -30,8 +34,8 @@ func _ready():
 	print("Global Autoload ready!")
 	
 	#ADDED FOR LEADERBOARD START
-	#SilentWolf.configure({ "api_key": "TblPt5B7K7xhsmuD2FPL6FdzF4mPUJmk551bTf70", "game_id": "RowdyRobo", "log_level": 1 })
-	#SilentWolf.configure_scores({"open_scene_on_close": Paths.LEADERBOARD})
+	SilentWolf.configure({ "api_key": EnvPaths.API_KEY, "game_id": "RowdyRobo", "log_level": 1 })
+	SilentWolf.configure_scores({"open_scene_on_close": Paths.LEADERBOARD})
 
 func leaderboard():
 	for score in Global.score: 
@@ -65,7 +69,7 @@ func save_student_data():
 		#new_file.store_csv_line(["FirstName", "LastInitial"])
 		new_file.close()
 	
-	#var file = FileAccess.open(Global.CSV_PATH, FileAccess.READ)
+	#var file = FileAccess.open(Paths.CSV_PATH, FileAccess.READ)
 	#var file_content = file.get_as_text()
 	#file.close()
 	#if new_student.get_data_csv() in file_content:
@@ -78,3 +82,18 @@ func save_student_data():
 	file.close()
 	
 	print("Global: Saved Student data!")
+
+func count_trash():
+	trash_nodes = get_tree().get_nodes_in_group("Trash")
+	Global.trash_node_count = trash_nodes.size()
+	Global.trash_collected = 0
+
+func reset_trash():
+	Global.trash_collected = 0
+	for trash in trash_nodes:
+		trash.make_exist()
+
+func _on_close_requested():
+	print("Early Exit!")
+	Global.save_student_data()
+	get_tree().quit()

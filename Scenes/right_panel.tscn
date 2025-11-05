@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://biy6wyjvx4qj3"]
+[gd_scene load_steps=11 format=3 uid="uid://biy6wyjvx4qj3"]
 
 [ext_resource type="Texture2D" uid="uid://651vug45u1sy" path="res://Sprites/YellowPlaid.jpg" id="1_m08yt"]
 [ext_resource type="Script" uid="uid://shndtp8c83rx" path="res://Scripts/right_panel.gd" id="1_tu6tr"]
@@ -25,10 +25,6 @@ region = Rect2(96, 32, 16, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_okq8o"]
 atlas = ExtResource("4_0j7mm")
 region = Rect2(80, 16, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kp3kk"]
-atlas = ExtResource("4_0j7mm")
-region = Rect2(64, 64, 16, 16)
 
 [node name="RightPanel" type="Panel"]
 clip_contents = true
@@ -106,6 +102,7 @@ layout_mode = 2
 [node name="PlayButton" type="TextureButton" parent="VBoxContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+tooltip_text = "Run the code!"
 toggle_mode = true
 texture_normal = SubResource("AtlasTexture_34bdi")
 texture_pressed = SubResource("AtlasTexture_0svdb")
@@ -115,29 +112,29 @@ stretch_mode = 5
 custom_minimum_size = Vector2(0, 112)
 layout_mode = 2
 size_flags_horizontal = 3
+tooltip_text = "Speed up the code"
 toggle_mode = true
 texture_normal = SubResource("AtlasTexture_jfvo1")
 texture_pressed = SubResource("AtlasTexture_mqydb")
 stretch_mode = 5
 
-[node name="LeaderBoardButton" type="TextureButton" parent="VBoxContainer/MarginContainer/HBoxContainer"]
+[node name="SubmitButton" type="TextureButton" parent="VBoxContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+tooltip_text = "Finalize your algorithm and play it out for 30 seconds to see how it performs!"
 texture_normal = SubResource("AtlasTexture_okq8o")
-stretch_mode = 5
-
-[node name="ExitButton" type="TextureButton" parent="VBoxContainer/MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(128, 128)
-layout_mode = 2
-texture_normal = SubResource("AtlasTexture_kp3kk")
 stretch_mode = 5
 
 [node name="CodeTimer" type="Timer" parent="."]
 wait_time = 0.5
 autostart = true
 
+[node name="PerformanceTimer" type="Timer" parent="."]
+wait_time = 30.0
+one_shot = true
+
 [connection signal="toggled" from="VBoxContainer/MarginContainer/HBoxContainer/PlayButton" to="." method="_on_play_button_toggled"]
 [connection signal="toggled" from="VBoxContainer/MarginContainer/HBoxContainer/SpeedButton" to="." method="_on_speed_button_toggled"]
-[connection signal="pressed" from="VBoxContainer/MarginContainer/HBoxContainer/LeaderBoardButton" to="." method="_on_leader_board_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/MarginContainer/HBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/HBoxContainer/SubmitButton" to="." method="_on_submit_button_pressed"]
 [connection signal="timeout" from="CodeTimer" to="." method="_on_code_timer_timeout"]
+[connection signal="timeout" from="PerformanceTimer" to="." method="_on_performance_timer_timeout"]

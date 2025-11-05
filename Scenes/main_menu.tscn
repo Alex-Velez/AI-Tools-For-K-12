@@ -6,9 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://651vug45u1sy" path="res://Sprites/YellowPlaid.jpg" id="2_n45e2"]
 [ext_resource type="Theme" uid="uid://bx3if8ofhpi00" path="res://Themes/TitleText.theme" id="3_opfnp"]
 [ext_resource type="Theme" uid="uid://c0lvx4iie64la" path="res://Themes/MainMenuTextEditTheme.theme" id="4_opfnp"]
-[ext_resource type="Shader" uid="uid://c7rip2qb75ywu" path="res://Shaders/main_menu_title.gdshader" id="4_yhxw7"]
+[ext_resource type="Shader" uid="uid://c7rip2qb75ywu" path="res://Shaders/wiggle.gdshader" id="4_yhxw7"]
 [ext_resource type="Theme" uid="uid://bg6m0u6rl2kgy" path="res://Themes/ToolTipText.theme" id="5_cp0ys"]
-[ext_resource type="Shader" uid="uid://c164surlibc7b" path="res://Shaders/main_menu_robot.gdshader" id="7_trj04"]
+[ext_resource type="Shader" uid="uid://c164surlibc7b" path="res://Shaders/float.gdshader" id="7_trj04"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yhxw7"]
 shader = ExtResource("2_cp0ys")

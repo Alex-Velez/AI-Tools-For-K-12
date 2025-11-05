@@ -15,5 +15,7 @@ const PHASE1_DIALOGUE = "res://Dialogues/phase1.dialogue"
 const PHASE2_DIALOGUE = "res://Dialogues/phase2.dialogue"
 const PHASE3_DIALOGUE = "res://Dialogues/phase3.dialogue"
 
-#const LEADERBOARD = "res://Scenes/Leaderboard.tscn"
-const LEADERBOARD = "res://Scenes/leaderboard_test.tscn"
+const LEADERBOARD = "res://Scenes/Leaderboard.tscn"
+const LEADERBOARD2 = "res://Scenes/leaderboard_2.tscn"
+
+const TRASH_SCENE: String = "res://Scenes/trash.tscn"

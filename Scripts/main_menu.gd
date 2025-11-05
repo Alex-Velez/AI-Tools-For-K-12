@@ -31,6 +31,11 @@ func _on_start_button_pressed() -> void:
 	
 	var new_student = Student.new(first_name, last_name, grade)
 	
+	# create file if it doesnt exist
+	if not FileAccess.file_exists(Paths.CSV_PATH):
+		var new_file = FileAccess.open(Paths.CSV_PATH, FileAccess.WRITE)
+		new_file.close()
+	
 	# check if student already exists
 	var file = FileAccess.open(Paths.CSV_PATH, FileAccess.READ)
 	var file_content = file.get_as_text()
