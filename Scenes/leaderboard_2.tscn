@@ -1,7 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://ce72dl6uolfol"]
+[gd_scene load_steps=10 format=3 uid="uid://ce72dl6uolfol"]
 
+[ext_resource type="Script" uid="uid://dd7lcxi2mkyaa" path="res://Scripts/leaderboard_2.gd" id="1_1wv0i"]
 [ext_resource type="Theme" uid="uid://b5fspwopkw78g" path="res://Themes/MarginTheme.tres" id="1_soe5i"]
 [ext_resource type="Theme" uid="uid://bx3if8ofhpi00" path="res://Themes/TitleText.theme" id="2_7qo7o"]
+[ext_resource type="Shader" uid="uid://b7ixma8lv4jr8" path="res://Shaders/scrolling.gdshader" id="2_ip83g"]
+[ext_resource type="Texture2D" uid="uid://m4mqvvose31t" path="res://Sprites/sky-blue-white-tartan-check-600nw-2427233445.webp" id="3_hj6bx"]
+[ext_resource type="Shader" uid="uid://c7rip2qb75ywu" path="res://Shaders/wiggle.gdshader" id="5_dnnac"]
+[ext_resource type="PackedScene" uid="uid://cb7ig2yadkjrc" path="res://Scenes/score_entry.tscn" id="7_ly1k5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8oaco"]
+shader = ExtResource("2_ip83g")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5dt0q"]
+shader = ExtResource("5_dnnac")
 
 [node name="Leaderboard" type="Control"]
 layout_mode = 3
@@ -10,6 +21,18 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_1wv0i")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_8oaco")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_hj6bx")
+stretch_mode = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -27,7 +50,8 @@ theme_override_constants/margin_bottom = 125
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+material = SubResource("ShaderMaterial_5dt0q")
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_7qo7o")
@@ -44,72 +68,29 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="ScoreEntry" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource("7_ly1k5")]
 layout_mode = 2
-theme_override_font_sizes/font_size = 66
-text = "PLAYER 1"
-horizontal_alignment = 1
-vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="ScoreEntry2" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource("7_ly1k5")]
 layout_mode = 2
-theme_override_font_sizes/font_size = 66
-text = "PLAYER 1"
-horizontal_alignment = 1
-vertical_alignment = 1
 
-[node name="Label3" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="ScoreEntry3" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource("7_ly1k5")]
 layout_mode = 2
-theme_override_font_sizes/font_size = 66
-text = "PLAYER 1"
-horizontal_alignment = 1
-vertical_alignment = 1
 
-[node name="Label4" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="ScoreEntry4" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource("7_ly1k5")]
 layout_mode = 2
-theme_override_font_sizes/font_size = 66
-text = "PLAYER 1"
-horizontal_alignment = 1
-vertical_alignment = 1
 
-[node name="Label5" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="ScoreEntry5" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource("7_ly1k5")]
 layout_mode = 2
-theme_override_font_sizes/font_size = 66
-text = "PLAYER 1"
-horizontal_alignment = 1
-vertical_alignment = 1
 
-[node name="Label6" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="ScoreEntry6" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource("7_ly1k5")]
 layout_mode = 2
-theme_override_font_sizes/font_size = 66
-text = "PLAYER 1"
-horizontal_alignment = 1
-vertical_alignment = 1
 
-[node name="Label7" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="ScoreEntry7" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource("7_ly1k5")]
 layout_mode = 2
-theme_override_font_sizes/font_size = 66
-text = "PLAYER 1"
-horizontal_alignment = 1
-vertical_alignment = 1
 
-[node name="Label8" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="ScoreEntry8" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource("7_ly1k5")]
 layout_mode = 2
-theme_override_font_sizes/font_size = 66
-text = "PLAYER 1"
-horizontal_alignment = 1
-vertical_alignment = 1
 
-[node name="Label9" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="ScoreEntry9" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource("7_ly1k5")]
 layout_mode = 2
-theme_override_font_sizes/font_size = 66
-text = "PLAYER 1"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label10" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 66
-text = "PLAYER 1"
-horizontal_alignment = 1
-vertical_alignment = 1

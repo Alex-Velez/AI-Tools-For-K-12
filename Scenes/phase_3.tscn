@@ -121,17 +121,3 @@ is_phase_3 = true
 
 [node name="BottomPanel" parent="VSplitContainer" instance=ExtResource("9_34bdi")]
 layout_mode = 2
-
-[connection signal="body_entered" from="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/VBoxContainer/SubViewportContainer/SubViewport/Trash" to="." method="_on_trash_body_entered"]
-[connection signal="body_entered" from="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/VBoxContainer/SubViewportContainer/SubViewport/Trash2" to="." method="_on_trash_body_entered"]
-[connection signal="body_entered" from="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/VBoxContainer/SubViewportContainer/SubViewport/Trash3" to="." method="_on_trash_body_entered"]
-[connection signal="body_entered" from="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/VBoxContainer/SubViewportContainer/SubViewport/Trash4" to="." method="_on_trash_body_entered"]
-[connection signal="body_entered" from="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/VBoxContainer/SubViewportContainer/SubViewport/Trash5" to="." method="_on_trash_body_entered"]
-[connection signal="body_entered" from="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/VBoxContainer/SubViewportContainer/SubViewport/Trash6" to="." method="_on_trash_body_entered"]
-[connection signal="body_entered" from="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/VBoxContainer/SubViewportContainer/SubViewport/Trash7" to="." method="_on_trash_body_entered"]
-[connection signal="body_entered" from="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/VBoxContainer/SubViewportContainer/SubViewport/Trash8" to="." method="_on_trash_body_entered"]
-[connection signal="body_entered" from="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/VBoxContainer/SubViewportContainer/SubViewport/Trash9" to="." method="_on_trash_body_entered"]
-[connection signal="body_entered" from="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/VBoxContainer/SubViewportContainer/SubViewport/Trash10" to="." method="_on_trash_body_entered"]
-[connection signal="body_entered" from="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/VBoxContainer/SubViewportContainer/SubViewport/Trash11" to="." method="_on_trash_body_entered"]
-[connection signal="body_entered" from="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/VBoxContainer/SubViewportContainer/SubViewport/Trash12" to="." method="_on_trash_body_entered"]
-[connection signal="body_entered" from="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/VBoxContainer/SubViewportContainer/SubViewport/Trash13" to="." method="_on_trash_body_entered"]

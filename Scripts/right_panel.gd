@@ -1,10 +1,12 @@
 extends Panel
 
-@onready var leaderboard_button = $VBoxContainer/MarginContainer/HBoxContainer/LeaderBoardButton
+@onready var submit_button = $VBoxContainer/MarginContainer/HBoxContainer/SubmitButton
 @onready var drop_slot_container = $VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer
 @onready var drop_slots: Array = drop_slot_container.get_children()
 @onready var code_timer = $CodeTimer
 @onready var performance_timer = $PerformanceTimer
+@onready var play_button = $VBoxContainer/MarginContainer/HBoxContainer/PlayButton
+@onready var speed_button = $VBoxContainer/MarginContainer/HBoxContainer/SpeedButton
 
 @export var robot: RowdyRobot
 @export var is_phase_3: bool
@@ -13,9 +15,10 @@ var is_code_running: bool = false
 var code_block_index: int = 0
 var user_code: Array[Global.CodeAction] = []
 var clean_time: float = 0
+var goto_next_scene: bool = false
 
 func _ready() -> void:
-	leaderboard_button.visible = is_phase_3
+	submit_button.visible = is_phase_3
 	if !default_code.is_empty():
 		for i in range(default_code.size()):
 			drop_slots[i].set_action(default_code[i])
@@ -38,8 +41,7 @@ func _on_play_button_toggled(toggled_on: bool) -> void:
 		code_block_index = 0
 		clean_time = 0
 		robot.reset()
-	if performance_timer.is_stopped():
-		performance_timer.start()
+		Global.reset_trash()
 
 func _on_speed_button_toggled(toggled_on: bool) -> void:
 	if toggled_on:
@@ -47,14 +49,18 @@ func _on_speed_button_toggled(toggled_on: bool) -> void:
 	else:
 		code_timer.wait_time = 0.5
 
-func _on_leader_board_button_pressed() -> void:
-	Global.save_student_data()
-	#get_tree().change_scene_to_file(Paths.LEADERBOARD)
-
-func _on_exit_button_pressed() -> void:
-	print("Early Exit!")
-	Global.save_student_data()
-	get_tree().change_scene_to_file(Paths.MAIN_MENU)
+func _on_submit_button_pressed() -> void:
+	play_button.disabled = true
+	play_button.modulate = Color8(48, 48, 48)
+	speed_button.disabled = true
+	speed_button.modulate = Color8(48, 48, 48)
+	code_timer.wait_time = 0.03
+	is_code_running = true
+	code_block_index = 0
+	clean_time = 0
+	robot.reset()
+	Global.reset_trash()
+	performance_timer.start()
 
 func _set_drop_slot_highlight():
 	drop_slots[code_block_index % len(drop_slots)].modulate = Color.AQUA
@@ -67,4 +73,4 @@ func _gather_user_code():
 			user_code.append(slot.assigned_action)
 
 func _on_performance_timer_timeout() -> void:
-	get_tree().change_scene_to_file(Paths.LEADERBOARD2)
+	goto_next_scene = true

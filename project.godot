@@ -21,6 +21,7 @@ Global="*res://Scripts/global.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
 Paths="*res://Scripts/paths.gd"
+EnvPaths="*res://Scripts/env_paths.gd"
 
 [dialogue_manager]
 

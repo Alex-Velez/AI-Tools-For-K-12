@@ -8,16 +8,14 @@ var phase_duration: float = 0
 var trash_collected: int = 0
 
 func _ready() -> void:
+	Global.count_trash()
 	progress_bar.max_value = trash_node_count
 	DialogueManager.show_dialogue_balloon(load(Paths.PHASE1_DIALOGUE))
 
 func _process(delta: float) -> void:
 	phase_duration += delta
-	if progress_bar.ratio == 1.0:
+	progress_bar.value = Global.trash_collected
+	if right_panel.goto_next_scene:
 		print("Phase1: Complete")
 		Global.cache_student_phase_data("phase1", phase_duration, progress_bar.ratio, right_panel.user_code)
 		get_tree().change_scene_to_file(Paths.PHASE2)
-
-func _on_trash_body_entered(_body: Node2D) -> void:
-	trash_collected += 1
-	progress_bar.value = trash_collected
