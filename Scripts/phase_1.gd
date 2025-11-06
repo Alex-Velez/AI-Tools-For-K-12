@@ -11,11 +11,17 @@ func _ready() -> void:
 	Global.count_trash()
 	progress_bar.max_value = trash_node_count
 	DialogueManager.show_dialogue_balloon(load(Paths.PHASE1_DIALOGUE))
+	progress_bar.value_changed.connect(_on_progress_value_changed)
 
+func _on_progress_value_changed(new_value):
+	if new_value >= 99:
+		#print("top line")
+		right_panel.goto_next_scene = true
+	
 func _process(delta: float) -> void:
 	phase_duration += delta
 	progress_bar.value = Global.trash_collected
-	if right_panel.goto_next_scene:
+	if right_panel.goto_next_scene or progress_bar.ratio >= .99:
 		print("Phase1: Complete")
 		Global.cache_student_phase_data("phase1", phase_duration, progress_bar.ratio, right_panel.user_code)
 		#await simpleboards.send_score_without_id(leaderboard_id, Global.current_student.first_name, Global.current_student.phase1_performance_history, "")
