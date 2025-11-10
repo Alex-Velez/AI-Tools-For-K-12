@@ -218,7 +218,7 @@ grow_vertical = 2
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_asssd")
 theme_override_font_sizes/font_size = 36
-text = "After mastering these phases, enter the Free Dev Zone to design and test your own cleaning algorithms!"
+text = "After mastering these phases, enter the Challenge Level to design and test your own cleaning algorithms!"
 horizontal_alignment = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
