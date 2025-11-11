@@ -121,7 +121,7 @@ stretch_mode = 5
 [node name="SubmitButton" type="TextureButton" parent="VBoxContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-tooltip_text = "Finalize your algorithm and play it out for 30 seconds to see how it performs!"
+tooltip_text = "Finalize your algorithm and play it out for 15 seconds to see how it performs!"
 texture_normal = SubResource("AtlasTexture_okq8o")
 stretch_mode = 5
 
@@ -130,7 +130,7 @@ wait_time = 0.5
 autostart = true
 
 [node name="PerformanceTimer" type="Timer" parent="."]
-wait_time = 30.0
+wait_time = 15.0
 one_shot = true
 
 [connection signal="toggled" from="VBoxContainer/MarginContainer/HBoxContainer/PlayButton" to="." method="_on_play_button_toggled"]

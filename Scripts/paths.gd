@@ -18,4 +18,6 @@ const PHASE3_DIALOGUE = "res://Dialogues/phase3.dialogue"
 const LEADERBOARD = "res://Scenes/Leaderboard.tscn"
 const LEADERBOARD2 = "res://Scenes/leaderboard_2.tscn"
 
+const LEADERBOARDSB = "res://Scenes/leaderboard_test.tscn"
+
 const TRASH_SCENE: String = "res://Scenes/trash.tscn"

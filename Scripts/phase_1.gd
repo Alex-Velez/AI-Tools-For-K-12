@@ -3,7 +3,7 @@ extends Control
 @onready var trash_node_count: int = get_tree().get_nodes_in_group("Trash").size()
 @onready var progress_bar = $VSplitContainer/TopPanel/HSplitContainer/LeftPanel/VBoxContainer/ProgressBar
 @onready var right_panel = $VSplitContainer/TopPanel/HSplitContainer/RightPanel
-#const leaderboard_id = "b424453d-081b-4666-0528-08de1bc660ae"
+const leaderboard_id = "b424453d-081b-4666-0528-08de1bc660ae"
 var phase_duration: float = 0
 var trash_collected: int = 0
 
@@ -24,6 +24,6 @@ func _process(delta: float) -> void:
 	if right_panel.goto_next_scene or progress_bar.ratio >= .99:
 		print("Phase1: Complete")
 		Global.cache_student_phase_data("phase1", phase_duration, progress_bar.ratio, right_panel.user_code)
-		#await simpleboards.send_score_without_id(leaderboard_id, Global.current_student.first_name, Global.current_student.phase1_performance_history, "")
+		#await simpleboards.send_score_without_id(leaderboard_id, Global.current_student.first_name, 88, "") #Global.current_student.phase1_performance_history
 		#get_tree().change_scene_to_file(Paths.LEADERBOARD)
 		get_tree().change_scene_to_file(Paths.PHASE2)

@@ -23,5 +23,5 @@ func _process(delta: float) -> void:
 		Global.save_student_data()
 		#await simpleboards.send_score_without_id(leaderboard_id, Global.current_student.first_name, Global.current_student.performance_history[-1], "{}")
 		get_tree().change_scene_to_file(Paths.LEADERBOARD2)
-		#get_tree().change_scene_to_file("res://Scenes/simpleboardleaderboard.tscn")
+		#get_tree().change_scene_to_file(Paths.LEADERBOARDSB)
 	
