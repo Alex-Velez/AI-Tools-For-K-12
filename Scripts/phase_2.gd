@@ -21,7 +21,7 @@ func _on_progress_value_changed(new_value):
 func _process(delta: float) -> void:
 	phase_duration += delta
 	progress_bar.value = Global.trash_collected
-	if right_panel.goto_next_scene or progress_bar.ratio >= .99:
+	if right_panel.goto_next_scene or progress_bar.ratio >= .80:
 		print("Phase2: Complete")
 		Global.cache_student_phase_data("phase2", phase_duration, progress_bar.ratio, right_panel.user_code)
 		get_tree().change_scene_to_file(Paths.PHASE3)

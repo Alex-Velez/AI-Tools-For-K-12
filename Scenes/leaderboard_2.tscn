@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ce72dl6uolfol"]
+[gd_scene load_steps=11 format=3 uid="uid://ce72dl6uolfol"]
 
 [ext_resource type="Script" uid="uid://dd7lcxi2mkyaa" path="res://Scripts/leaderboard_2.gd" id="1_1wv0i"]
 [ext_resource type="Theme" uid="uid://b5fspwopkw78g" path="res://Themes/MarginTheme.tres" id="1_soe5i"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://m4mqvvose31t" path="res://Sprites/sky-blue-white-tartan-check-600nw-2427233445.webp" id="3_hj6bx"]
 [ext_resource type="Shader" uid="uid://c7rip2qb75ywu" path="res://Shaders/wiggle.gdshader" id="5_dnnac"]
 [ext_resource type="PackedScene" uid="uid://cb7ig2yadkjrc" path="res://Scenes/score_entry.tscn" id="7_ly1k5"]
+[ext_resource type="Script" uid="uid://c0pfaes2lchom" path="res://addons/simpleboards_plugin/SimpleBoardsApi.gd" id="8_hj6bx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8oaco"]
 shader = ExtResource("2_ip83g")
@@ -63,34 +64,39 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ScrollContainer"]
+[node name="LeaderboardVbox" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ScrollContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="ScoreEntry" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource("7_ly1k5")]
+[node name="ScoreEntry" parent="MarginContainer/VBoxContainer/ScrollContainer/LeaderboardVbox" instance=ExtResource("7_ly1k5")]
 layout_mode = 2
 
-[node name="ScoreEntry2" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource("7_ly1k5")]
+[node name="ScoreEntry2" parent="MarginContainer/VBoxContainer/ScrollContainer/LeaderboardVbox" instance=ExtResource("7_ly1k5")]
 layout_mode = 2
 
-[node name="ScoreEntry3" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource("7_ly1k5")]
+[node name="ScoreEntry3" parent="MarginContainer/VBoxContainer/ScrollContainer/LeaderboardVbox" instance=ExtResource("7_ly1k5")]
 layout_mode = 2
 
-[node name="ScoreEntry4" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource("7_ly1k5")]
+[node name="ScoreEntry4" parent="MarginContainer/VBoxContainer/ScrollContainer/LeaderboardVbox" instance=ExtResource("7_ly1k5")]
 layout_mode = 2
 
-[node name="ScoreEntry5" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource("7_ly1k5")]
+[node name="ScoreEntry5" parent="MarginContainer/VBoxContainer/ScrollContainer/LeaderboardVbox" instance=ExtResource("7_ly1k5")]
 layout_mode = 2
 
-[node name="ScoreEntry6" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource("7_ly1k5")]
+[node name="ScoreEntry6" parent="MarginContainer/VBoxContainer/ScrollContainer/LeaderboardVbox" instance=ExtResource("7_ly1k5")]
 layout_mode = 2
 
-[node name="ScoreEntry7" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource("7_ly1k5")]
+[node name="ScoreEntry7" parent="MarginContainer/VBoxContainer/ScrollContainer/LeaderboardVbox" instance=ExtResource("7_ly1k5")]
 layout_mode = 2
 
-[node name="ScoreEntry8" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource("7_ly1k5")]
+[node name="ScoreEntry8" parent="MarginContainer/VBoxContainer/ScrollContainer/LeaderboardVbox" instance=ExtResource("7_ly1k5")]
 layout_mode = 2
 
-[node name="ScoreEntry9" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource("7_ly1k5")]
+[node name="ScoreEntry9" parent="MarginContainer/VBoxContainer/ScrollContainer/LeaderboardVbox" instance=ExtResource("7_ly1k5")]
 layout_mode = 2
+
+[node name="SimpleBoardsApi" type="Node" parent="."]
+script = ExtResource("8_hj6bx")
+metadata/_custom_type_script = "uid://c0pfaes2lchom"

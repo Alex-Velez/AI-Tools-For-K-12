@@ -18,7 +18,7 @@ func _ready():
 	simpleboards.entry_sent.connect(_on_entry_sent)
 	
 	# Send a score
-	await simpleboards.send_score_without_id(leaderboard_id, Global.current_student.first_name, str(Global.current_student.performance_history), "")
+	await simpleboards.send_score_without_id(leaderboard_id, Global.current_student.first_name, str(Global.current_student.performance_history[-1]), "")
 	#await simpleboards.send_score_with_id(leaderboard_id, "Kay - Test", "65.5", "{}", "1")
 	
 	# Get leaderboard entries
@@ -27,7 +27,7 @@ func _ready():
 func _on_entries_got(entries):
 	print("\n=== LEADERBOARD ===")
 	for i in range(entries.size()):
-		print(i+1, ". ", entries[i].get("name", "Unknown"), " - ", entries[i].get("score", "0"))
+		print(i+1, ". ", entries[i].get("playerDisplayName", "Unknown"), " - ", entries[i].get("score", "0"))
 
 func _on_entry_sent(entry):
 	print("✓ Score submitted!")
