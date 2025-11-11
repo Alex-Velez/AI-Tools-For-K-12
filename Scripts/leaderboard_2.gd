@@ -128,7 +128,7 @@ func display_leaderboard(entries):
 		var label = Label.new()
 		label.text = str(i + 1) + ". " + player_name + " - " + str(player_score)
 		label.add_theme_font_override("font", font)
-		label.add_theme_font_size_override("font_size", 50)
+		label.add_theme_font_size_override("font_size", 80)
 		label.add_theme_color_override("font_color", Color.BLACK)
 		leaderboard_vbox.add_child(label)
 		
