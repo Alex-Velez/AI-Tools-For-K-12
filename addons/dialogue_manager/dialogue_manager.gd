@@ -11,6 +11,7 @@ const DMCompiler = preload("./compiler/compiler.gd")
 const DMCompilerResult = preload("./compiler/compiler_result.gd")
 const DMResolvedLineData = preload("./compiler/resolved_line_data.gd")
 
+signal dialogue_finished
 
 ## Emitted when a dialogue balloon is created and dialogue starts
 signal dialogue_started(resource: DialogueResource)
@@ -106,6 +107,7 @@ func get_next_dialogue_line(resource: DialogueResource, key: String = "", extra_
 	# If our dialogue is nothing then we hit the end
 	if not _is_valid(dialogue):
 		dialogue_ended.emit.call_deferred(resource)
+		emit_signal("dialogue_ended")
 		return null
 
 	# Run the mutation if it is one
@@ -150,8 +152,10 @@ func get_line(resource: DialogueResource, key: String, extra_game_states: Array)
 		if stack.size() > 0:
 			return await get_line(resource, "|".join(stack), extra_game_states)
 		else:
+			emit_signal("dialogue_ended")
 			return null
 	elif key == DMConstants.ID_END_CONVERSATION:
+		emit_signal("dialogue_ended")
 		return null
 
 	# See if it is a title

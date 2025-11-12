@@ -50,4 +50,4 @@ func _on_start_button_pressed() -> void:
 	
 	Global.current_student = new_student
 	print("Cached student: first, last, grade")
-	get_tree().change_scene_to_file(Paths.WELCOME)
+	get_tree().change_scene_to_file(Paths.WELCOME2)
