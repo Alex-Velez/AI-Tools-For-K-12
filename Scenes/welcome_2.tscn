@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://mfg08ypbc3t5"]
+[gd_scene load_steps=19 format=3 uid="uid://mfg08ypbc3t5"]
 
 [ext_resource type="Script" uid="uid://gq6t3exia1rk" path="res://Scenes/welcome_2.gd" id="1_bjmxc"]
 [ext_resource type="Shader" uid="uid://b7ixma8lv4jr8" path="res://Shaders/scrolling.gdshader" id="2_76qky"]
@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://bxqovfmhxm4ig" path="res://Sprites/random.png" id="9_4h6q5"]
 [ext_resource type="Theme" uid="uid://bg6m0u6rl2kgy" path="res://Themes/ToolTipText.theme" id="9_bjmxc"]
 [ext_resource type="Texture2D" uid="uid://dxh5atjrfd324" path="res://Sprites/code blocks.png" id="10_bjmxc"]
+[ext_resource type="PackedScene" uid="uid://cyorx7axit2lq" path="res://Scenes/right_panel_demo.tscn" id="11_753a1"]
+[ext_resource type="PackedScene" uid="uid://hurva27pe0qy" path="res://Scenes/bottom_panel.tscn" id="12_sbpvk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8oaco"]
 shader = ExtResource("2_76qky")
@@ -41,7 +43,7 @@ corner_detail = 5
 [sub_resource type="Theme" id="Theme_sbpvk"]
 Panel/styles/panel = SubResource("StyleBoxFlat_yhxw7")
 
-[node name="Leaderboard" type="Control"]
+[node name="WelcomeScreen" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -127,11 +129,31 @@ fit_content = true
 scroll_active = false
 
 [node name="Random" type="Sprite2D" parent="."]
-position = Vector2(599.62506, 559.375)
-scale = Vector2(0.8163684, 0.7644168)
+position = Vector2(686.90625, 608.84375)
+scale = Vector2(0.8562174, 0.80512774)
 texture = ExtResource("9_4h6q5")
 
+[node name="RightPanel" parent="." instance=ExtResource("11_753a1")]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.546
+anchor_bottom = 0.5
+offset_left = 2099.0
+offset_top = 225.0
+offset_right = 1619.6799
+offset_bottom = 475.0
+
+[node name="BottomPanel" parent="." instance=ExtResource("12_sbpvk")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.013
+anchor_right = 0.149
+anchor_bottom = 0.19700001
+offset_left = 1336.04
+offset_top = 1279.0
+offset_right = 2447.92
+offset_bottom = 1327.24
+
 [node name="CodeBlocks" type="Sprite2D" parent="."]
-position = Vector2(1575, 561)
-scale = Vector2(0.9853195, 0.9719101)
+position = Vector2(1584, 606)
 texture = ExtResource("10_bjmxc")

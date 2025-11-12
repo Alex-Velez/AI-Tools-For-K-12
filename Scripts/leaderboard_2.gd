@@ -36,14 +36,61 @@ func _ready():
 	simpleboards.entries_got.connect(_on_entries_got)
 	simpleboards.entry_sent.connect(_on_entry_sent)
 	
+	var perf = Global.current_student.performance_history[-1]
+	var perf_string = str(round(perf * 1000) / 10) #+ "%"
 	# Send a score
-	await simpleboards.send_score_without_id(leaderboard_id, Global.current_student.first_name, str(Global.current_student.performance_history[-1]), "")
+	await simpleboards.send_score_without_id(leaderboard_id, Global.current_student.first_name, perf_string, "")
 	#await simpleboards.send_score_with_id(leaderboard_id, "Kay - Test", "65.5", "{}", "1")
 	
 	# Get leaderboard entries
 	await simpleboards.get_entries(leaderboard_id)
 	
+func _on_entry_sent(entry):
+	print("✓ Score submitted!")
+	print(entry)
+	# Refresh leaderboard after submission
+	await simpleboards.get_entries(leaderboard_id)
 	
+	
+func clear_leaderboard():
+	if leaderboard_vbox == null:
+		print("Leaderboard VBoxContainer node not found!")
+		return
+	
+	for child in leaderboard_vbox.get_children():
+		child.queue_free()
+
+
+
+		
+func display_leaderboard(entries):
+	clear_leaderboard()
+	var font = FontFile.new()
+	font.font_data = load("res://Fonts/KGRedHands.ttf")
+	#leaderboard_panel.theme = leaderboard_theme
+	#label.add_font_override("font", font)
+	for i in range(entries.size()):
+		var entry = entries[i]
+		var player_name = entry.get("playerDisplayName", "Unknown")
+		var player_score = entry.get("score", "0")
+		
+		
+		
+		
+		var label = Label.new()
+		label.text = str(i + 1) + ". " + player_name + " - " + str(player_score) + "%"
+		label.add_theme_font_override("font", font)
+		label.add_theme_font_size_override("font_size", 80)
+		label.add_theme_color_override("font_color", Color.BLACK)
+		leaderboard_vbox.add_child(label)
+		
+func _on_entries_got(entries):
+	display_leaderboard(entries)
+	print("\n=== LEADERBOARD ===")
+	for i in range(entries.size()):
+		print(i+1, ". ", entries[i].get("playerDisplayName", "Unknown"), " - ", entries[i].get("score", "0"))
+
+
 func load_csv_as_array(file_path: String) -> Array:
 	var data_array: Array = []
 	var file = FileAccess.open(file_path, FileAccess.READ)
@@ -91,49 +138,3 @@ func compare_values(a, b):
 	#
 	## Get leaderboard entries
 	#await simpleboards.get_entries(leaderboard_id)
-
-
-func _on_entry_sent(entry):
-	print("✓ Score submitted!")
-	print(entry)
-	# Refresh leaderboard after submission
-	await simpleboards.get_entries(leaderboard_id)
-	
-	
-func clear_leaderboard():
-	if leaderboard_vbox == null:
-		print("Leaderboard VBoxContainer node not found!")
-		return
-	
-	for child in leaderboard_vbox.get_children():
-		child.queue_free()
-
-
-
-		
-func display_leaderboard(entries):
-	clear_leaderboard()
-	var font = FontFile.new()
-	font.font_data = load("res://Fonts/American Captain.ttf")
-	#leaderboard_panel.theme = leaderboard_theme
-	#label.add_font_override("font", font)
-	for i in range(entries.size()):
-		var entry = entries[i]
-		var player_name = entry.get("playerDisplayName", "Unknown")
-		var player_score = entry.get("score", "0")
-		
-		
-		
-		
-		var label = Label.new()
-		label.text = str(i + 1) + ". " + player_name + " - " + str(player_score)
-		label.add_theme_font_override("font", font)
-		label.add_theme_font_size_override("font_size", 80)
-		label.add_theme_color_override("font_color", Color.BLACK)
-		leaderboard_vbox.add_child(label)
-		
-func _on_entries_got(entries):
-	display_leaderboard(entries)
-	print("\n=== LEADERBOARD ===")
-	for i in range(entries.size()):
-		print(i+1, ". ", entries[i].get("playerDisplayName", "Unknown"), " - ", entries[i].get("score", "0"))

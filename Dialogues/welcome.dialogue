@@ -1,8 +1,10 @@
 ~ start
-RowdyRobo: Welcome to Rowdy Robo! In this game, you are going to discover ALGORITHMS. 
-RowdyRobo: Algorithms are the [wave] heart of AI [/wave]
+RowdyRobo: Hi there, {{Global.current_student.first_name}} I'm RowdyRobo, your coding buddy! Welcome to my world! Let's work together to learn some algorithms [wait=1](and clean up a little, while we are at it) 
+- Next
+RowdyRobo: Algorithms are the [wave] foundation of AI [/wave], helping robots and computers solve problems and make decisions
 - I've always wanted to know how AI works! 
-RowdyRobo: Great! Lets first go over algorithms. Algorithms are simple, step-by-step instructions—just like a recipe you might follow when baking a cake
+- Cool, what is an algorithm? 
+RowdyRobo: Algorithms are simple, step-by-step instructions—just like a recipe you might follow when baking a cake. In this game, Algorithms are just a set of instructions to tell me where to go! 
 - Algorithms are just a list of instructions, got it
 RowdyRobo: Exactly, and AI is when a bunch of algorithms work together, and learn from eachother, to solve problems 
 - AI is starts with simple steps, and learns. 

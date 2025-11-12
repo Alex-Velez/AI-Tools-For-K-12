@@ -71,30 +71,39 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="ScoreEntry" parent="MarginContainer/VBoxContainer/ScrollContainer/LeaderboardVbox" instance=ExtResource("7_ly1k5")]
+visible = false
 layout_mode = 2
 
 [node name="ScoreEntry2" parent="MarginContainer/VBoxContainer/ScrollContainer/LeaderboardVbox" instance=ExtResource("7_ly1k5")]
+visible = false
 layout_mode = 2
 
 [node name="ScoreEntry3" parent="MarginContainer/VBoxContainer/ScrollContainer/LeaderboardVbox" instance=ExtResource("7_ly1k5")]
+visible = false
 layout_mode = 2
 
 [node name="ScoreEntry4" parent="MarginContainer/VBoxContainer/ScrollContainer/LeaderboardVbox" instance=ExtResource("7_ly1k5")]
+visible = false
 layout_mode = 2
 
 [node name="ScoreEntry5" parent="MarginContainer/VBoxContainer/ScrollContainer/LeaderboardVbox" instance=ExtResource("7_ly1k5")]
+visible = false
 layout_mode = 2
 
 [node name="ScoreEntry6" parent="MarginContainer/VBoxContainer/ScrollContainer/LeaderboardVbox" instance=ExtResource("7_ly1k5")]
+visible = false
 layout_mode = 2
 
 [node name="ScoreEntry7" parent="MarginContainer/VBoxContainer/ScrollContainer/LeaderboardVbox" instance=ExtResource("7_ly1k5")]
+visible = false
 layout_mode = 2
 
 [node name="ScoreEntry8" parent="MarginContainer/VBoxContainer/ScrollContainer/LeaderboardVbox" instance=ExtResource("7_ly1k5")]
+visible = false
 layout_mode = 2
 
 [node name="ScoreEntry9" parent="MarginContainer/VBoxContainer/ScrollContainer/LeaderboardVbox" instance=ExtResource("7_ly1k5")]
+visible = false
 layout_mode = 2
 
 [node name="SimpleBoardsApi" type="Node" parent="."]
