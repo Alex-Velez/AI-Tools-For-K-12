@@ -21,3 +21,5 @@ const LEADERBOARD2 = "res://Scenes/leaderboard_2.tscn"
 const LEADERBOARDSB = "res://Scenes/leaderboard_test.tscn"
 
 const TRASH_SCENE: String = "res://Scenes/trash.tscn"
+
+const WELCOME_DIALOGUE = "res://Dialogues/welcome.dialogue"
