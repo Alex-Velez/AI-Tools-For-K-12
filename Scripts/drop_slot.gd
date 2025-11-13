@@ -9,12 +9,15 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if self.is_hovering:
-		if Input.is_action_pressed("right_mouse_click"):
+		if Input.is_action_pressed("right_mouse_click") and !Global.is_dragging:
 			self.clear_action()
-		elif Global.holding_action != Global.CodeAction.NULL and !Global.is_dragging:
-			self.set_action(Global.holding_action)
-			Global.holding_action = Global.CodeAction.NULL
-			
+		elif Input.is_action_pressed("mouse_click"):
+			if Global.holding_action != Global.CodeAction.NULL:
+					Global.is_dragging = false
+					self.set_action(Global.holding_action)
+					Global.holding_action = Global.CodeAction.NULL
+					Global.holding_code_block.queue_free()
+	
 func _on_mouse_entered():
 	self.is_hovering = true
 

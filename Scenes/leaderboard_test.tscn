@@ -1,11 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://d2y61v2fvurkn"]
+[gd_scene load_steps=2 format=3 uid="uid://d2y61v2fvurkn"]
 
-[ext_resource type="Script" uid="uid://c0pfaes2lchom" path="res://addons/simpleboards_plugin/SimpleBoardsApi.gd" id="1_b5nfe"]
 [ext_resource type="Script" uid="uid://bbjnjkgfo3ypy" path="res://Scripts/leaderboard_test.gd" id="1_wsnff"]
 
 [node name="LeaderboardTest" type="Node2D"]
 script = ExtResource("1_wsnff")
 
 [node name="SimpleBoardsApi" type="Node" parent="."]
-script = ExtResource("1_b5nfe")
 metadata/_custom_type_script = "uid://c0pfaes2lchom"

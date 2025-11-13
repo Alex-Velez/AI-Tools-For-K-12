@@ -22,6 +22,8 @@ var is_dragging: bool = false
 var holding_code_block = null
 var holding_code_block_offset: Vector2 = Vector2.ZERO
 var holding_action: CodeAction = CodeAction.NULL
+var total_time_elapsed: float = 0.0
+var is_tracking_time: bool = false
 
 var trash_nodes: Array
 var trash_node_count: int = -1
@@ -32,6 +34,7 @@ var score = 0
 
 func _ready():
 	print("Global Autoload ready!")
+	get_tree().set_auto_accept_quit(false)
 	
 	#ADDED FOR LEADERBOARD START
 	#SilentWolf.configure({ "api_key": EnvPaths.API_KEY, "game_id": "RowdyRobo", "log_level": 1 })
@@ -42,9 +45,11 @@ func leaderboard():
 		Global.student_list.append(current_student.first_name)
 ##END
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	leaderboard()
-	if is_dragging:
+	if is_tracking_time:
+		Global.total_time_elapsed += delta
+	if is_dragging and holding_code_block != null:
 		holding_code_block.global_position = get_viewport().get_mouse_position() - Global.holding_code_block_offset
 
 func cache_student_phase_data(_current_phase: String, phase_duration: float, performance: float, user_code: Array[Global.CodeAction]):
@@ -97,3 +102,9 @@ func _on_close_requested():
 	print("Early Exit!")
 	Global.save_student_data()
 	get_tree().quit()
+
+func _notification(what):
+	if what == NOTIFICATION_WM_CLOSE_REQUEST:
+		print("Early Exit!")
+		Global.save_student_data()
+		get_tree().quit()
