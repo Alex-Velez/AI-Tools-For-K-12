@@ -30,7 +30,7 @@ func _ready():
 		for child in get_children():
 			print(" - ", child.name)
 		return
-	simpleboards.set_api_key(EnvPaths.API_KEY)
+	simpleboards.set_api_key("70846422-667f-4bb5-b7fa-28f5f5ef206c") #EnvPaths.API_KEY
 	
 	# Connect signals
 	simpleboards.entries_got.connect(_on_entries_got)
