@@ -15,7 +15,7 @@ var phase0_performance_history: Array[float] = []
 var phase1_performance_history: Array[float] = []
 var phase2_performance_history: Array[float] = []
 var phase3_performance_history: Array[float] = [] 
-var code_history: Dictionary[String, Array]
+var code_history: Array[Array]
 #
 var phase0_code_history: Array[Array] = []
 var phase1_code_history: Array[Array] = []
@@ -28,7 +28,7 @@ func _init(f_name: String, l_name: String, s_grade: int) -> void:
 	self.grade = s_grade
 	self.phase_durations = []
 	self.performance_history = []
-	self.code_history = {}
+	self.code_history = []
 
 func get_data() -> Array:
 	var data = [

@@ -47,7 +47,7 @@ func _process(_delta: float) -> void:
 	if is_dragging:
 		holding_code_block.global_position = get_viewport().get_mouse_position() - Global.holding_code_block_offset
 
-func cache_student_phase_data(current_phase: String, phase_duration: float, performance: float, user_code: Array[Global.CodeAction]):
+func cache_student_phase_data(_current_phase: String, phase_duration: float, performance: float, user_code: Array[Global.CodeAction]):
 	print("Global: Chaching student...")
 	if Global.current_student == null:
 		print("No student in cache!")
@@ -55,7 +55,7 @@ func cache_student_phase_data(current_phase: String, phase_duration: float, perf
 	
 	Global.current_student.phase_durations.append(phase_duration)
 	Global.current_student.performance_history.append(performance)
-	Global.current_student.code_history[current_phase] = user_code
+	Global.current_student.code_history.append(user_code)
 	print("Global: Cached student - phasedur, perfhist, codehist")
 
 func save_student_data():
