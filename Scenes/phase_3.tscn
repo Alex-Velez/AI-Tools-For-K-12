@@ -121,3 +121,6 @@ is_phase_3 = true
 
 [node name="BottomPanel" parent="VSplitContainer" instance=ExtResource("9_34bdi")]
 layout_mode = 2
+enabled_movement = true
+enabled_random = true
+enabled_ifs = true

@@ -1,12 +1,11 @@
-[gd_scene load_steps=8 format=4 uid="uid://couy16iq3l4pp"]
+[gd_scene load_steps=7 format=4 uid="uid://couy16iq3l4pp"]
 
 [ext_resource type="Script" uid="uid://dur0qidc1u7cn" path="res://Scripts/phase_0.gd" id="1_s8djo"]
 [ext_resource type="TileSet" uid="uid://cr61rcvxrur8h" path="res://TileSets/Room1TileSet.res" id="2_mrxjg"]
 [ext_resource type="PackedScene" uid="uid://cj1s32in6tw1k" path="res://Scenes/robot.tscn" id="3_lmucv"]
 [ext_resource type="PackedScene" uid="uid://cp52gaebpptxg" path="res://Scenes/trash.tscn" id="4_2m5nj"]
 [ext_resource type="PackedScene" uid="uid://biy6wyjvx4qj3" path="res://Scenes/right_panel.tscn" id="5_heoph"]
-[ext_resource type="Theme" uid="uid://b5fspwopkw78g" path="res://Themes/MarginTheme.tres" id="6_auunl"]
-[ext_resource type="PackedScene" uid="uid://gmeoe7uq2h4l" path="res://Scenes/code_block.tscn" id="9_ayl1w"]
+[ext_resource type="PackedScene" uid="uid://hurva27pe0qy" path="res://Scenes/bottom_panel.tscn" id="6_43cet"]
 
 [node name="Phase0" type="Control"]
 layout_mode = 3
@@ -89,105 +88,10 @@ step = 1.0
 layout_mode = 2
 robot = NodePath("../LeftPanel/VBoxContainer/SubViewportContainer/SubViewport/Robot")
 
-[node name="BottomPanel" type="Panel" parent="VSplitContainer"]
-clip_contents = true
+[node name="BottomPanel" parent="VSplitContainer" instance=ExtResource("6_43cet")]
 layout_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="VSplitContainer/BottomPanel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-theme = ExtResource("6_auunl")
-
-[node name="HFlowContainer" type="HFlowContainer" parent="VSplitContainer/BottomPanel/MarginContainer"]
-layout_mode = 2
-
-[node name="CodeBlock" parent="VSplitContainer/BottomPanel/MarginContainer/HFlowContainer" instance=ExtResource("9_ayl1w")]
-layout_mode = 2
-keep_pressed_outside = true
-text = "CODEBLOCK"
-action_type = 1
-
-[node name="CodeBlock2" parent="VSplitContainer/BottomPanel/MarginContainer/HFlowContainer" instance=ExtResource("9_ayl1w")]
-layout_mode = 2
-keep_pressed_outside = true
-text = "CODEBLOCK"
-action_type = 2
-
-[node name="CodeBlock3" parent="VSplitContainer/BottomPanel/MarginContainer/HFlowContainer" instance=ExtResource("9_ayl1w")]
-layout_mode = 2
-keep_pressed_outside = true
-text = "CODEBLOCK"
-action_type = 3
-
-[node name="CodeBlock4" parent="VSplitContainer/BottomPanel/MarginContainer/HFlowContainer" instance=ExtResource("9_ayl1w")]
-layout_mode = 2
-keep_pressed_outside = true
-text = "CODEBLOCK"
-action_type = 4
-
-[node name="CodeBlock5" parent="VSplitContainer/BottomPanel/MarginContainer/HFlowContainer" instance=ExtResource("9_ayl1w")]
-layout_mode = 2
-keep_pressed_outside = true
-text = "CODEBLOCK"
-action_type = 5
-
-[node name="CodeBlock6" parent="VSplitContainer/BottomPanel/MarginContainer/HFlowContainer" instance=ExtResource("9_ayl1w")]
-layout_mode = 2
-keep_pressed_outside = true
-text = "CODEBLOCK"
-action_type = 6
-
-[node name="CodeBlock7" parent="VSplitContainer/BottomPanel/MarginContainer/HFlowContainer" instance=ExtResource("9_ayl1w")]
-layout_mode = 2
-keep_pressed_outside = true
-text = "CODEBLOCK"
-action_type = 7
-
-[node name="CodeBlock8" parent="VSplitContainer/BottomPanel/MarginContainer/HFlowContainer" instance=ExtResource("9_ayl1w")]
-layout_mode = 2
-keep_pressed_outside = true
-text = "CODEBLOCK"
-action_type = 8
-
-[node name="CodeBlock9" parent="VSplitContainer/BottomPanel/MarginContainer/HFlowContainer" instance=ExtResource("9_ayl1w")]
-visible = false
-layout_mode = 2
-keep_pressed_outside = true
-text = "CODEBLOCK"
-action_type = 9
-
-[node name="CodeBlock10" parent="VSplitContainer/BottomPanel/MarginContainer/HFlowContainer" instance=ExtResource("9_ayl1w")]
-visible = false
-layout_mode = 2
-keep_pressed_outside = true
-text = "CODEBLOCK"
-action_type = 10
-
-[node name="CodeBlock11" parent="VSplitContainer/BottomPanel/MarginContainer/HFlowContainer" instance=ExtResource("9_ayl1w")]
-visible = false
-layout_mode = 2
-keep_pressed_outside = true
-text = "CODEBLOCK"
-action_type = 11
-
-[node name="CodeBlock12" parent="VSplitContainer/BottomPanel/MarginContainer/HFlowContainer" instance=ExtResource("9_ayl1w")]
-visible = false
-layout_mode = 2
-keep_pressed_outside = true
-text = "CODEBLOCK"
-action_type = 12
-
-[node name="CodeBlock13" parent="VSplitContainer/BottomPanel/MarginContainer/HFlowContainer" instance=ExtResource("9_ayl1w")]
-visible = false
-layout_mode = 2
-keep_pressed_outside = true
-text = "CODEBLOCK"
-action_type = 13
+enabled_movement = true
+glow_blocks = Array[int]([1])
 
 [connection signal="body_entered" from="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/VBoxContainer/SubViewportContainer/SubViewport/Trash" to="." method="_on_trash_body_entered"]
 [connection signal="body_entered" from="VSplitContainer/TopPanel/HSplitContainer/LeftPanel/VBoxContainer/SubViewportContainer/SubViewport/Trash2" to="." method="_on_trash_body_entered"]

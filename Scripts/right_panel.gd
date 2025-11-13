@@ -11,6 +11,7 @@ extends Panel
 @export var robot: RowdyRobot
 @export var is_phase_3: bool
 @export var default_code: Array[Global.CodeAction]
+@export var is_speed_locked: bool
 var is_code_running: bool = false
 var code_block_index: int = 0
 var user_code: Array[Global.CodeAction] = []
@@ -18,6 +19,11 @@ var clean_time: float = 0
 var goto_next_scene: bool = false
 
 func _ready() -> void:
+	if is_speed_locked:
+		code_timer.wait_time = 0.03
+		speed_button.disabled = true
+		speed_button.modulate = Color8(48, 48, 48)
+	
 	submit_button.visible = is_phase_3
 	if !default_code.is_empty():
 		for i in range(default_code.size()):
