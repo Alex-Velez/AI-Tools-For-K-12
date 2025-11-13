@@ -22,6 +22,8 @@ var phase1_code_history: Array[Array] = []
 var phase2_code_history: Array[Array] = []
 var phase3_code_history: Array[Array] = []
 
+var total_time: float
+
 func _init(f_name: String, l_name: String, s_grade: int) -> void:
 	self.first_name = f_name
 	self.last_name = l_name
@@ -29,6 +31,8 @@ func _init(f_name: String, l_name: String, s_grade: int) -> void:
 	self.phase_durations = []
 	self.performance_history = []
 	self.code_history = []
+	self.total_time = 0
+	Global.is_tracking_time = true
 
 func get_data() -> Array:
 	var data = [
@@ -38,5 +42,6 @@ func get_data() -> Array:
 		self.phase_durations,
 		self.performance_history,
 		self.code_history,
+		self.total_time,
 	]
 	return data
